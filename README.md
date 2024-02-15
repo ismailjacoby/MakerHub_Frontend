@@ -39,5 +39,5 @@ npm start
 #
 **Contact**
 
-For any inquiries or feedback, feel free to reach out to [ismail.jacoby@example.com].
+For any inquiries or feedback, feel free to reach out to [ismail.jacoby@gmail.com].
 
