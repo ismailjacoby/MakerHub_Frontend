@@ -1,0 +1,58 @@
+/* Header Style */
+.header {
+  background-color: black;
+  padding: 20px 0;
+  font-family: 'Drukwide',sans-serif;
+  font-size: 14px;
+}
+
+.header-content {
+  margin: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.nav-logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Nav Links */
+.nav-links ul {
+  list-style-type: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Wishlist, Cart, Account */
+.nav-icon {
+  width: 25px;
+  height: auto;
+  filter: invert(1);
+}
+
+.nav-icons .icon-link {
+  margin-left: 20px;
+}
+
+.nav-icons .icon-link:last-child {
+  margin-right: 0;
+}
