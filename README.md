@@ -4,7 +4,13 @@ It represents the final milestone where participants develop their personal proj
 The primary objective of my project is to develop a web application for my company, Hybridvision.
 Since i am switching my career path i am building a complete website for my business associate.
 The main goal of this site is to centralize and streamline various tasks currently managed by multiple separate applications. 
-The site will primarily serve as a showcase for a recording studio, offering features such as buying productions, sample packs, book studio sessions but also more features like creating and sending invoices or quotes on the admin side.#
+The site will primarily serve as a showcase for a recording studio, offering features such as buying productions, sample packs, book studio sessions but also more features like creating and sending invoices or quotes on the admin side.
+#
+**Figma Design Mockup**
+
+Explore the Figma design mockup I created to visualize the interface of my project:
+
+https://www.figma.com/file/kiIAL8M6GtG24Vx7QclWqJ/Untitled?type=design&node-id=1%3A526&mode=design&t=VxKfQZzGsRxj95qx-1
 #
 **Technologies:**
 - Angular (Front)
