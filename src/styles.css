@@ -13,8 +13,12 @@
 @font-face {
   font-family: 'SuisseIntl';
   src: url(/assets/fonts/SuisseIntl-Regular.ttf) format('truetype');
-
 }
+@font-face {
+  font-family: 'Sequel';
+  src: url(/assets/fonts/Sequel100Black-45.ttf) format('truetype');
+}
+
 
 /* BODY */
 body{
