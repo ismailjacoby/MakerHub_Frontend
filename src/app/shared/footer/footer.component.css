@@ -8,6 +8,7 @@ footer{
   color: white;
   font-family: 'Sequel';
   font-size: 10px;
+  padding: 10px;
 }
 /* Titles */
 h2{
@@ -43,7 +44,7 @@ a:hover{
 }
 #subscribe-button{
   background-color: black;
-  border: 2px solid white;
+  border: 1px solid white;
   color: white;
   font-family: 'Sequel', sans-serif;
   width: 75px;

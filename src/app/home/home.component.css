@@ -1,0 +1,42 @@
+.homepage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.home-text,
+.home-image {
+  flex: 1;
+}
+.home-text {
+  margin-right: 20px;
+}
+h2,h1{
+  font-family: 'Drukwide', sans-serif;
+  margin-bottom: 0;
+}
+h2{
+  font-size: 14px;
+}
+h1{
+  margin-top: 0;
+}
+p{
+  font-family: Sequel,sans-serif;
+  font-size: 10px;
+}
+#btn-discover{
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  font-family: Sequel,sans-serif;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+#btn-discover:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
