@@ -90,7 +90,7 @@
     background-color: black;
     width: 100%;
     transform: translateX(-100%);
-    transition: all 0.3s ease-in-out;
+    transition: 0.1s linear;
   }
   .nav-list{
     flex-direction: column;
