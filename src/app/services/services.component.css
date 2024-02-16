@@ -1,0 +1,39 @@
+h2{
+  font-family: 'Drukwide', sans-serif;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.service-card {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.service-card:hover {
+  background-color: #e8e8e8;
+}
+
+.service-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.service-card h2 {
+  margin-top: 0;
+}
+
+.service-card p {
+  margin-bottom: 0;
+}
