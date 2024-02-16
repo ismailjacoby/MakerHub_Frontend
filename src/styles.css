@@ -24,4 +24,6 @@
 body{
   margin: 0;
   padding: 0;
+  padding-top: 110px;
+  padding-bottom: 200px;
 }

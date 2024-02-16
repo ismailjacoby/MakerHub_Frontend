@@ -40,3 +40,11 @@ p{
   text-decoration: underline;
   cursor: pointer;
 }
+@media (max-width: 1086px) {
+  .homepage{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

@@ -66,3 +66,16 @@ a:hover{
   width: 25px;
   height: auto;
 }
+.mobile-footer{
+  display: none;
+  padding: 10px;
+}
+
+@media (max-width: 1086px) {
+  .show{
+    display: none;
+  }
+  .mobile-footer{
+    display: block;
+  }
+}
