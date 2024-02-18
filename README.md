@@ -1,3 +1,5 @@
+Incomplete (Deadline 29 March)
+
 Makerhub is the final project for the Technobel training program. 
 It represents the final milestone where participants develop their personal projects, which are then showcased in front of a jury. 
 
