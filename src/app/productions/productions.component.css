@@ -1,0 +1,85 @@
+h2{
+  font-family: 'Drukwide', sans-serif;
+  text-align: center;
+}
+
+.music-player{
+  margin:0 auto;
+  background-color: lightgrey;
+  width: 50%;
+  height: 1000px;
+  font-family: 'Sequel', sans-serif;
+  font-size: 11px;
+}
+.music-player{
+  display: flex;
+  flex-direction: column;
+}
+
+.column-title{
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+.song-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.song-details{
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.song-category{
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.song-actions{
+  display: flex;
+}
+
+.song-artwork {
+  width: 50px;
+}
+
+
+.cover-artwork{
+  width: 60px;
+  height: auto;
+}
+
+.song-actions {
+  display: flex;
+}
+
+.music-player-icons{
+  filter: invert(1);
+  width: 25px;
+}
+
+.shopping-icon{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.music-player-buttons{
+  border: none;
+  background-color: black;
+  font-family: 'Sequel', sans-serif;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.music-player-buttons:hover{
+  background-color: #343434;
+}
