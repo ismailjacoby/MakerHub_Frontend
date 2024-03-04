@@ -1,3 +1,5 @@
+;
+import { Error404Component } from './components/shared/error404/error404.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -30,7 +32,8 @@ import { PrivacyPolicyComponent } from './components/guidelines/privacy-policy/p
     FaqComponent,
     LicensingInfoComponent,
     TermsOfUseComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

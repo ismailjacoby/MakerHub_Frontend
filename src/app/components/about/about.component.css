@@ -17,6 +17,10 @@ h2{
   width: 400px;
   border-radius: 10px;
   margin: 5px;
+  transition: 0.05s;
+}
+.gallery-section img:hover{
+  transform: scale(1.02);
 }
 
 /* Gear List Styles */

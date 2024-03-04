@@ -10,6 +10,7 @@ import {FaqComponent} from "./components/guidelines/faq/faq.component";
 import {LicensingInfoComponent} from "./components/guidelines/licensing-info/licensing-info.component";
 import {TermsOfUseComponent} from "./components/guidelines/terms-of-use/terms-of-use.component";
 import {PrivacyPolicyComponent} from "./components/guidelines/privacy-policy/privacy-policy.component";
+import {Error404Component} from "./components/shared/error404/error404.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'licensing', component: LicensingInfoComponent},
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
-  {path:'faq', component: FaqComponent}
+  {path:'faq', component: FaqComponent},
+  {path:'**', component: Error404Component}
 ];
 
 @NgModule({
