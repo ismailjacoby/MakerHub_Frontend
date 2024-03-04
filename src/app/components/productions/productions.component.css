@@ -195,12 +195,13 @@ h2{
 }
 
 .license ul {
-  padding-left: 20px;
+  padding-left:0px;
 }
 
 .license ul li {
   list-style-type: none;
   margin-bottom: 5px;
+  font-size: 10px;
 }
 
 .license-btn{

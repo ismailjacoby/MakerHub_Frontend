@@ -41,6 +41,8 @@ h2{
 }
 
 .service-card p {
+  font-family: 'Sequel', sans-serif;
+  font-size: 12px;
   margin-bottom: 0;
 }
 
