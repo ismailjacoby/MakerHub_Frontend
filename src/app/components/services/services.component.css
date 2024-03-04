@@ -3,6 +3,7 @@ h2{
   text-align: center;
 }
 
+
 .services-container {
   display: flex;
   justify-content: center;
@@ -13,9 +14,10 @@ h2{
 }
 
 .service-card {
-  width: calc(50% - 20px);
-  max-width: 300px;
-  background-color: #f0f0f0;
+  width: 350px;
+  height: 250px;
+  background-color: white;
+  border: 1px solid #e1e1e1;
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -40,4 +42,31 @@ h2{
 
 .service-card p {
   margin-bottom: 0;
+}
+
+.interessted{
+  font-family: 'Sequel', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.interessted p{
+  margin-bottom: 25px;
+}
+
+.interessted input{
+  font-family: 'Sequel', sans-serif;
+  background-color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.interessted input:hover{
+  transform: scale(1.05);
+  text-decoration: underline;
+  cursor: pointer;
+
 }

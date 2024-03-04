@@ -1,0 +1,79 @@
+h2{
+  font-family: 'Drukwide', sans-serif;
+}
+p{
+  font-family: 'Sequel', sans-serif;
+  font-size: 12px;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto 100px;
+}
+
+.form input{
+  padding: 10px;
+}
+
+.form input, .form .file-upload {
+  width: 50%;
+  margin: 0 auto 10px;
+  font-family: Sequel, sans-serif;
+  font-size: 10px;
+}
+
+.input, .file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.file-label {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: black;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-label:hover{
+  transform: scale(1.01);
+  text-decoration: underline;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-selected {
+  margin-top: 5px;
+}
+
+.submit-btn{
+  border: none;
+  padding: 5px;
+  background-color: black;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:  0.1s;
+}
+.form textarea {
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  resize: vertical;
+  font-family: Sequel, sans-serif;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+
+.submit-btn:hover{
+  transform: scale(1.01);
+  text-decoration: underline;
+}
