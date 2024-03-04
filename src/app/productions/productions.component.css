@@ -24,9 +24,6 @@ h2{
 }
 
 /* Player Header */
-h3{
-
-}
 
 .column-title h3{
   display: flex;
@@ -109,6 +106,22 @@ h3{
   width: 20px;
 }
 
+.wishlist-icon button{
+  transition: 0.2s;
+}
+
+.wishlist-icon button:hover{
+  transform: scale(1.05);
+  background-color: #EF3232;
+}
+.shopping-icon button{
+  transition: 0.2s;
+}
+.shopping-icon button:hover{
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
 .shopping-icon{
   width: 150px;
   margin-right: 10px;
@@ -154,16 +167,20 @@ h3{
   margin: 20px auto;
   text-align: center;
   border-radius: 5px;
-
+  width: 95%;
 }
 
 .license {
-  width: 300px;
+  width: 250px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 10px;
   box-shadow: 2px 2px 5px  rgba(0, 0, 0, .1);
+  transition: 0.2s;
+}
+.license:hover {
+  transform: scale(1.01);
 }
 
 .license h3 {
@@ -171,11 +188,11 @@ h3{
   text-align: center;
   color: black;
   font-size: 20px;
-  margin-bottom: 10px;
 }
-
-.license p {
+.license h4 {
   margin-bottom: 5px;
+  font-family: 'Sequel', sans-serif;
+  font-size: 16px;
 }
 
 .license ul {
@@ -196,6 +213,12 @@ h3{
   padding: 10px;
   font-size: 12px;
   margin-top: 10px;
+  transition: 0.2s;
+}
+.license-btn:hover{
+  transform: scale(1.05);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

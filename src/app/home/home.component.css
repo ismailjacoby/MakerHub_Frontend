@@ -34,9 +34,11 @@ p{
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
+  transition: 0.1s;
 }
 
 #btn-discover:hover{
+  border: none;
   text-decoration: underline;
   cursor: pointer;
   transform: scale(1.025);
