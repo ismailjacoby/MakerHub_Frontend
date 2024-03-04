@@ -34,8 +34,6 @@
   margin-right: 20px;
 }
 
-
-
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -74,7 +72,7 @@
 
 
 /* Mobile Styles */
-@media (max-width: 1086px) {
+@media (max-width: 1200px) {
   .nav-logo{
     width: 50px;
   }
@@ -90,7 +88,6 @@
     background-color: black;
     width: 100%;
     transform: translateX(-100%);
-    transition: 0.1s linear;
   }
   .nav-list{
     flex-direction: column;

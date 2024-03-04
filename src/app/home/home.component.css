@@ -39,6 +39,12 @@ p{
 #btn-discover:hover{
   text-decoration: underline;
   cursor: pointer;
+  transform: scale(1.025);
+}
+
+#home-img{
+  width: 500px;
+  height: auto;
 }
 @media (max-width: 1086px) {
   .homepage{

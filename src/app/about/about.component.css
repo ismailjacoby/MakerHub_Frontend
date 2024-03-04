@@ -1,26 +1,40 @@
-p{
+p, li{
   font-family: Sequel,sans-serif;
   font-size: 12px;
 }
 h2{
   font-family: 'Drukwide', sans-serif;
 }
-
-.about-section{
+/* Section Styling */
+.about-section, .gallery-section, .gear-section {
   width: 75%;
-  margin: 0 auto;
+  margin: 2em auto 0;
   text-align: center;
 }
 
-.gallery-section{
-  width: 75%;
-  margin: 0 auto;
-  margin-top: 2em;
-  text-align: center;
-}
-
-.gallery-section img{
+/* Gallery Styles */
+.gallery-section img {
   width: 400px;
   border-radius: 10px;
   margin: 5px;
+}
+
+/* Gear List Styles */
+.gear-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gear-section ul li {
+  margin: 10px 0;
+}
+
+.gear-section ul li:before {
+  color: #007bff;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.gear-section ul li {
+  text-align: center;
 }
