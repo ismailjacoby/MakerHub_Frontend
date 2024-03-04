@@ -2,6 +2,9 @@ h2{
   font-family: 'Drukwide', sans-serif;
   text-align: center;
 }
+h3{
+  font-family: 'Drukwide', sans-serif;
+}
 
 
 .services-container {
@@ -42,7 +45,7 @@ h2{
 
 .service-card p {
   font-family: 'Sequel', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   margin-bottom: 0;
 }
 
@@ -57,6 +60,7 @@ h2{
 }
 
 .interessted input{
+  font-size: 12px;
   font-family: 'Sequel', sans-serif;
   background-color: black;
   border: none;

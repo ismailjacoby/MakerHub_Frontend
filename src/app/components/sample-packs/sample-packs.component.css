@@ -1,0 +1,72 @@
+.sample-pack-container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Drukwide', sans-serif;
+}
+
+.sample-pack-cover img{
+  width: 225px;
+  height: auto;
+  border-radius: 5px;
+}
+.sample-pack-list{
+  font-family: 'Sequel', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.sample-pack{
+  width: 225px;
+  text-align: center;
+  margin: 10px;
+}
+.sample-pack-title{
+  font-size: 14px;
+}
+
+.sample-pack-shop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 100%;
+}
+.sample-pack-shop p{
+  font-family: 'Sequel', sans-serif;
+  font-size: 12px;
+}
+
+.button-icon{
+  height: 15px;
+  width: auto;
+  filter: invert(1);
+}
+.sample-pack-button{
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 1px;
+  height: 25px;
+  margin: 5px;
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+  vertical-align: middle;
+  padding: 10px;
+  transition: 0.2s;
+}
+.sample-pack-shop p{
+  font-size: 14px;
+}
+.sample-pack-button:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: #EF3232;
+}

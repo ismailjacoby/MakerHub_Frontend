@@ -11,6 +11,10 @@ import { ServicesComponent } from './components/services/services.component';
 import { ProductionsComponent } from './components/productions/productions.component';
 import { SamplePacksComponent } from './components/sample-packs/sample-packs.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FaqComponent } from './components/guidelines/faq/faq.component';
+import { LicensingInfoComponent } from './components/guidelines/licensing-info/licensing-info.component';
+import { TermsOfUseComponent } from './components/guidelines/terms-of-use/terms-of-use.component';
+import { PrivacyPolicyComponent } from './components/guidelines/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ContactComponent } from './components/contact/contact.component';
     ServicesComponent,
     ProductionsComponent,
     SamplePacksComponent,
-    ContactComponent
+    ContactComponent,
+    FaqComponent,
+    LicensingInfoComponent,
+    TermsOfUseComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
