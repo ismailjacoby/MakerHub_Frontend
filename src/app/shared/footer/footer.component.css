@@ -71,7 +71,7 @@ a:hover{
   padding: 10px;
 }
 
-@media (max-width: 1086px) {
+@media (max-width: 1200px) {
   .show{
     display: none;
   }

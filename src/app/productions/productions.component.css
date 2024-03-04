@@ -1,33 +1,74 @@
+/* Title */
 h2{
   font-family: 'Drukwide', sans-serif;
   text-align: center;
 }
 
-.music-player{
-  margin:0 auto;
+/* Filter */
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container input, .filter-container select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-container select {
+  min-width: 120px;
+}
+
+/* Player Header */
+h3{
+
+}
+
+.column-title h3{
+  display: flex;
+  color: white;
+  margin-right: 13%;
+  text-align: center;
+}
+
+/* Music Player */
+
+.music-player {
+  margin: 0 auto;
   background-color: lightgrey;
-  width: 50%;
+  width: 90%;
+  max-width: 1000px;
   height: 1000px;
+  border-radius: 5px;
   font-family: 'Sequel', sans-serif;
   font-size: 11px;
-}
-.music-player{
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .column-title{
   width: 100%;
   height: 45px;
   background-color: black;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .song-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
 }
+
 
 .song-details{
   width: 650px;
@@ -44,10 +85,12 @@ h2{
 
 .song-actions{
   display: flex;
+  align-items: center;
 }
 
-.song-artwork {
+.song-artwork img{
   width: 50px;
+  margin-right: 10px;
 }
 
 
@@ -58,19 +101,24 @@ h2{
 
 .song-actions {
   display: flex;
+  margin-left: 50px;
 }
 
 .music-player-icons{
   filter: invert(1);
-  width: 25px;
+  width: 20px;
 }
 
 .shopping-icon{
-  margin-right: 15px;
-  margin-left: 15px;
+  width: 150px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .music-player-buttons{
+  display: flex;
+  align-items: center;
+  padding: 5px;
   border: none;
   background-color: black;
   font-family: 'Sequel', sans-serif;
@@ -82,4 +130,82 @@ h2{
 
 .music-player-buttons:hover{
   background-color: #343434;
+}
+
+#cart-btn-icon{
+  margin-left: 5px;
+}
+
+@media (max-width: 1200px) {
+  .column-title h3{
+    display: none;
+  }
+}
+
+
+/* Licensing */
+
+.license-section {
+  font-family: Sequel, sans-serif;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+.license {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px  rgba(0, 0, 0, .1);
+}
+
+.license h3 {
+  font-family: 'Drukwide', sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.license p {
+  margin-bottom: 5px;
+}
+
+.license ul {
+  padding-left: 20px;
+}
+
+.license ul li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.license-btn{
+  font-family: 'Sequel', sans-serif;
+  background-color: black;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .license {
+    width: calc(50% - 20px); /* Make licenses half the width of the container with some margin */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .license {
+    width: calc(100% - 20px); /* Make licenses full width of the container with some margin */
+  }
 }
