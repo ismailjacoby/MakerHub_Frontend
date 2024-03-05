@@ -41,6 +41,7 @@ a:hover{
   margin-right: 0.25em;
   font-family: Sequel;
   font-size: 8px;
+  outline-color: black;
 }
 #subscribe-button{
   background-color: black;
@@ -69,6 +70,10 @@ a:hover{
 .mobile-footer{
   display: none;
   padding: 10px;
+}
+
+span{
+  font-size: 8px;
 }
 
 @media (max-width: 1200px) {

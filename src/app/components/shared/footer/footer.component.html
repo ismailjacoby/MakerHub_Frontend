@@ -31,10 +31,20 @@
 
   <div class="footer-news show">
     <h2>Newsletter</h2>
-    <div class="subscribe">
-      <input type="email" placeholder="Enter your email..." id="newletter-input">
-      <button id="subscribe-button">Subscribe</button>
+    <form class="subscribe" [formGroup]="form" (ngSubmit)="subscribe()">
+      <input type="email" placeholder="Enter your email..." id="newletter-input" formControlName="email">
+      <input type="submit" value="Subscribe" id="subscribe-button">
+    </form>
+
+    <div *ngIf="successMessage" class="message success-message">
+      <span>{{ successMessage }}</span>
+      <span class="icon">&#10003;</span>
     </div>
+
+    <div *ngIf="errorMessage" class="message error-message">
+      <span>{{ errorMessage }}</span>
+    </div>
+
     <div class="get-in-touch">
       <h3>Get in touch</h3>
       <ul class="social-icons">

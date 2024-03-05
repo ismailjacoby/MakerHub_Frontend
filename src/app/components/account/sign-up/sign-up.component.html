@@ -1,0 +1,26 @@
+<div class="signup-container">
+
+  <h2>Sign Up</h2>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="signUp()">
+    <input type="text" name="username" placeholder="*Username" formControlName="username">
+    <input type="text" name="firstName" placeholder="*First Name" formControlName="firstName">
+    <input type="text" name="lastName" placeholder="*Last Name" formControlName="lastName">
+    <input type="text" name="email" placeholder="*Email" formControlName="email">
+    <input type="password" name="password" placeholder="*Password" formControlName="password">
+    <input type="submit" value="SIGN UP" class="submit-btn">
+
+    <p>Already have an account? <a href="/login" id="login-btn">Login</a></p>
+  </form>
+
+  <div class="message-box">
+    <div *ngIf="successMessage" class="message success-message">
+      <span class="icon">&#10003;</span>
+      <span>{{ successMessage }}</span>
+    </div>
+    <div *ngIf="errorMessage" class="message error-message">
+      <span class="icon">&#10005;</span>
+      <span>{{ errorMessage }}</span>
+    </div>
+  </div>
+</div>

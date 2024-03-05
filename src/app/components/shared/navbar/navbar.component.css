@@ -49,9 +49,14 @@
   height: auto;
   filter: invert(1);
 }
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
 
 .nav-icons .icon-link {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .nav-icons .icon-link:last-child {
@@ -69,6 +74,21 @@
 .nav-links--open{
   transform: translateX(0);
 }
+
+.btn-login{
+  background-color: black;
+  margin-left: 50px;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+.btn-login:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 
 
 /* Mobile Styles */
@@ -107,4 +127,5 @@
   .hamburger{
     display: block;
   }
+
 }

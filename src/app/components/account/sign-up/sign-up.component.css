@@ -1,0 +1,80 @@
+.signup-container {
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form input {
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto 10px;
+  font-family: Sequel, sans-serif;
+  font-size: 10px;
+}
+
+.form input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn {
+  border: none;
+  background-color: black;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.01);
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: 'Drukwide', sans-serif;
+}
+
+p{
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+}
+
+#login-btn{
+  color: black;
+}
+
+#login-btn:hover{
+  cursor: pointer;
+}
+
+.message-box{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #68ef32;
+}
+
+.error-message {
+  color: #EF3232;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+
+

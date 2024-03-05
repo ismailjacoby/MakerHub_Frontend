@@ -1,0 +1,21 @@
+<div class="login-container">
+
+  <h2>Login</h2>
+
+  <form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+    <div class="form-actions">
+      <input type="submit" value="Login" class="submit-btn">
+      <a routerLink="#" class="forgot-password">Forgot password?</a>
+    </div>
+    <p>Don't have an account? <a routerLink="/signup" id="signup-btn">Sign up</a></p>
+
+    <div *ngIf="errorMessage" class="error-message">
+      <img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">
+      {{ errorMessage }}
+    </div>
+
+  </form>
+
+</div>
