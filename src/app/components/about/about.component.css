@@ -4,6 +4,7 @@ p, li{
 }
 h2{
   font-family: 'Drukwide', sans-serif;
+  font-size: 20px;
 }
 /* Section Styling */
 .about-section, .gallery-section, .gear-section {

@@ -1,9 +1,11 @@
 h2{
   font-family: 'Drukwide', sans-serif;
   text-align: center;
+  font-size: 20px;
 }
 h3{
   font-family: 'Drukwide', sans-serif;
+  font-size: 18px;
 }
 
 
@@ -45,21 +47,21 @@ h3{
 
 .service-card p {
   font-family: 'Sequel', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   margin-bottom: 0;
 }
 
-.interessted{
+.interested{
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
   text-align: center;
   margin-bottom: 50px;
 }
-.interessted p{
+.interested p{
   margin-bottom: 25px;
 }
 
-.interessted input{
+.interested input{
   font-size: 12px;
   font-family: 'Sequel', sans-serif;
   background-color: black;
@@ -70,7 +72,7 @@ h3{
   color: white;
 }
 
-.interessted input:hover{
+.interested input:hover{
   transform: scale(1.05);
   text-decoration: underline;
   cursor: pointer;

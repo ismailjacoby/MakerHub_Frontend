@@ -17,16 +17,18 @@ h2,h1{
   margin-bottom: 0;
 }
 h2{
-  font-size: 14px;
+  font-size: 15px;
 }
+
 h1{
   margin-top: 0;
 }
 p{
   font-family: Sequel,sans-serif;
-  font-size: 10px;
+  font-size: 12px;
 }
 #btn-discover{
+  font-size: 12px;
   margin-top: 10px;
   background-color: black;
   color: white;

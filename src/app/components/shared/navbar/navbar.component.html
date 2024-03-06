@@ -16,7 +16,16 @@
     <div class="nav-icons show">
       <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="nav-icon"></a>
       <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon"></a>
-      <a class="icon-link" (click)="logout()" *ngIf="isLoggedIn()"><img src="/assets/images/icons/navbar/user-circle.svg" alt="Account Icon" class="nav-icon"></a>
+      <div class="dropdown" *ngIf="isLoggedIn()">
+        <a class="icon-link" (click)="toggleDropdown()">
+          <img src="assets/images/icons/navbar/user-circle.svg" alt="Account Icon" class="nav-icon">
+        </a>
+        <div class="dropdown-content" [class.show]="isDropdownOpen">
+          <a routerLink="#"><img src="assets/images/icons/navbar/gear.svg" alt="Gear Icon">Edit Account</a>
+          <a routerLink="#"><img src="assets/images/icons/navbar/download-simple.svg" alt="Download Icon">My Orders</a>
+          <a (click)="openModal()"><img src="assets/images/icons/navbar/power.svg" alt="Logout Icon">Logout</a>
+        </div>
+      </div>
       <button class="btn-login" routerLink="account/login" *ngIf="!isLoggedIn()">Login</button>
     </div>
     <div class="hamburger" (click)="toggleMenu()">
@@ -24,3 +33,17 @@
     </div>
   </div>
 </header>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Are you sure you want to logout?</p>
+    <div class="buttons-container">
+      <button (click)="logout()" class="modal-btn">Yes</button>
+      <button (click)="closeModal()" class="modal-btn">No</button>
+    </div>
+  </div>
+</div>
+

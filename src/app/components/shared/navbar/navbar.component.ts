@@ -14,6 +14,7 @@ export class NavbarComponent {
   constructor(private readonly _authService: AuthService, private _router: Router) { }
 
   logout(){
+    this.closeModal();
     return this._authService.logout();
   }
 
@@ -29,4 +30,11 @@ export class NavbarComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
+  openModal() {
+    document.getElementById('myModal')!.style.display = "block";
+  }
+
+  closeModal() {
+    document.getElementById('myModal')!.style.display = "none";
+  }
 }
