@@ -17,7 +17,7 @@
       <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="nav-icon"></a>
       <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon"></a>
       <a class="icon-link" (click)="logout()" *ngIf="isLoggedIn()"><img src="/assets/images/icons/navbar/user-circle.svg" alt="Account Icon" class="nav-icon"></a>
-      <button class="btn-login" routerLink="login" *ngIf="!isLoggedIn()">Login</button>
+      <button class="btn-login" routerLink="account/login" *ngIf="!isLoggedIn()">Login</button>
     </div>
     <div class="hamburger" (click)="toggleMenu()">
       <img class="hamburger-icon" src="assets/images/icons/navbar/hamburgerIcon.png">

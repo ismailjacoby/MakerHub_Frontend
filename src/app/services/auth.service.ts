@@ -57,7 +57,7 @@ export class AuthService {
     localStorage.removeItem('username');
     this.userRole = '';
     this.connectedUser.next(null);
-    this._router.navigate(['login'])
+    this._router.navigate(['account/login'])
   }
 
   getUsername(): string | null{
