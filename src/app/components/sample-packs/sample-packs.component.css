@@ -6,6 +6,7 @@
 h2{
   text-align: center;
   font-family: 'Drukwide', sans-serif;
+  font-size: 20px;
 }
 
 .sample-pack-cover img{
@@ -27,19 +28,17 @@ h2{
   margin: 10px;
 }
 .sample-pack-title{
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .sample-pack-shop{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
   width: 100%;
 }
 .sample-pack-shop p{
   font-family: 'Sequel', sans-serif;
-  font-size: 12px;
 }
 
 .button-icon{
