@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AccountService} from "../../../services/account.service";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
 
-  constructor(private _authService: AuthService, private _router: Router, private _formBuilder: FormBuilder) {
+  constructor(private _authService: AuthService,
+              private _router: Router,
+              private _accountService: AccountService,
+              private _formBuilder: FormBuilder) {
     this.loginForm = _formBuilder.group({
         username: _formBuilder.control('', Validators.required),
         password: _formBuilder.control('', Validators.required)
@@ -37,5 +41,6 @@ export class LoginComponent {
       )
 
   }
+
 
 }

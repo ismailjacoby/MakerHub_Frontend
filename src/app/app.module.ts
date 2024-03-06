@@ -16,10 +16,9 @@ import { FaqComponent } from './components/guidelines/faq/faq.component';
 import { LicensingInfoComponent } from './components/guidelines/licensing-info/licensing-info.component';
 import { TermsOfUseComponent } from './components/guidelines/terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './components/guidelines/privacy-policy/privacy-policy.component';
-import { LoginComponent } from './components/account/login/login.component';
-import { SignUpComponent } from './components/account/sign-up/sign-up.component';
 import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.component';
 import {HttpClientModule} from "@angular/common/http";
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +36,8 @@ import {HttpClientModule} from "@angular/common/http";
     TermsOfUseComponent,
     PrivacyPolicyComponent,
     Error404Component,
-    LoginComponent,
     UnsubscribeComponent,
-    SignUpComponent
+    AccountComponent
   ],
   imports: [
     BrowserModule,

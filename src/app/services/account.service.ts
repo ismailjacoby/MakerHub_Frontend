@@ -13,4 +13,8 @@ export class AccountService {
   signUp(account: Account): Observable<any>{
     return this._http.post<any>('http://localhost:8080/account/signup', account)
   }
+
+  forgotPassword(email: String): Observable<any>{
+    return this._http.post<any>('http://localhost:8080/account/forgot-password', { email });
+  }
 }

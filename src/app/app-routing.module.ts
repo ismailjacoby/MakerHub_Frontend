@@ -11,9 +11,8 @@ import {LicensingInfoComponent} from "./components/guidelines/licensing-info/lic
 import {TermsOfUseComponent} from "./components/guidelines/terms-of-use/terms-of-use.component";
 import {PrivacyPolicyComponent} from "./components/guidelines/privacy-policy/privacy-policy.component";
 import {Error404Component} from "./components/shared/error404/error404.component";
-import {SignUpComponent} from "./components/account/sign-up/sign-up.component";
-import {LoginComponent} from "./components/account/login/login.component";
 import {UnsubscribeComponent} from "./components/unsubscribe/unsubscribe.component";
+
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -23,8 +22,7 @@ const routes: Routes = [
   {path:'productions', component:ProductionsComponent},
   {path:'samplepacks', component:SamplePacksComponent},
   {path:'contact', component:ContactComponent},
-  {path:'signup', component:SignUpComponent},
-  {path:'login', component:LoginComponent},
+  {path:'account', loadChildren: ()=>import('./components/account/account.module').then(m => m.AccountModule)},
   {path:'licensing', component: LicensingInfoComponent},
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
