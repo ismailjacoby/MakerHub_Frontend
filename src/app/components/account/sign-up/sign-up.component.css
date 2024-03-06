@@ -26,6 +26,9 @@
   cursor: pointer;
   transition: 0.1s;
 }
+.submit-btn:disabled{
+  opacity: 0.25;
+}
 
 .submit-btn:hover {
   transform: scale(1.01);
@@ -64,16 +67,27 @@ p{
 }
 
 .success-message {
-  color: #68ef32;
+  font-family: 'Sequel', sans-serif;
+  color: #32ef3b;
+  font-size: 12px;
 }
 
 .error-message {
+  font-family: 'Sequel', sans-serif;
   color: #EF3232;
+  font-size: 12px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.icon {
-  margin-right: 10px;
-  font-size: 20px;
+.error-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 

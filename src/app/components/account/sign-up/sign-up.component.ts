@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../../services/account.service";
 import {Route, Router} from "@angular/router";
+import {passwordMinLength} from "../../../validations/passwordMinLength";
 
 export interface Account{
   username: string;
@@ -27,8 +28,8 @@ export class SignUpComponent {
       username: _formBuilder.control('', Validators.required),
       firstName: _formBuilder.control('', Validators.required),
       lastName: _formBuilder.control('', Validators.required),
-      email: _formBuilder.control('', Validators.email),
-      password: _formBuilder.control('', Validators.required),
+      email: _formBuilder.control('', [Validators.required,Validators.email]),
+      password: _formBuilder.control('', [Validators.required,passwordMinLength()]),
     })
   }
 
@@ -47,7 +48,11 @@ export class SignUpComponent {
         this.errorMessage = null;
         this.resetForm();
       }, (error) => {
-        this.errorMessage = 'Error registering player';
+        if (error.error.message) {
+          this.errorMessage = error.error.message;
+        } else {
+          this.errorMessage = 'Error registering player';
+        }
         this.successMessage = null;
       }
     )
