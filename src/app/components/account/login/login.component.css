@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+.submit-btn:disabled{
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
 .submit-btn {
   border: none;
   background-color: black;
@@ -74,6 +79,7 @@ p{
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .error-icon {

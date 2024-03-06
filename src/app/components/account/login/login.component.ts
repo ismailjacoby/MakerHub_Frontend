@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -8,29 +9,33 @@ import {Router} from "@angular/router";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  username!: string;
-  password!: string;
   errorMessage: string = '';
+  loginForm!: FormGroup;
 
-  constructor(private _authService: AuthService, private _router: Router) {
+
+  constructor(private _authService: AuthService, private _router: Router, private _formBuilder: FormBuilder) {
+    this.loginForm = _formBuilder.group({
+        username: _formBuilder.control('', Validators.required),
+        password: _formBuilder.control('', Validators.required)
+      }
+    )
   }
 
   onSubmit(){
-    console.log('Submitting login form with username:', this.username);
-    this._authService.login(this.username, this.password).subscribe(response=> {
-      console.log('Login successful. Response:', response);
-      this._authService.userRole = response.role;
-      this._router.navigate(['home'])
-      console.log(response)
-      }, error => {
-          console.error('Login failed. Error:', error);
-
-          if(error.status === 403){
+      this._authService.login(this.loginForm.value.username,this.loginForm.value.password).subscribe(
+        response =>{
+          this._authService.userRole = response.role;
+          this._router.navigate(['home'])
+        }, error =>{
+          console.log(error);
+          if(error.status == 403){
             this.errorMessage = 'Invalid username or password';
           } else{
             this.errorMessage = 'An error occurred. Please try again later.';
           }
-      })
+        }
+      )
+
   }
 
 }

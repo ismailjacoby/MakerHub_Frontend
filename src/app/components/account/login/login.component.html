@@ -2,18 +2,23 @@
 
   <h2>Login</h2>
 
-  <form class="form" (ngSubmit)="onSubmit()">
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Username" formControlName="username">
+    <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message"><img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">Username is required.</div>
+
+
+    <input type="password" placeholder="Password" formControlName="password">
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message"><img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">Password is required.</div>
+
     <div class="form-actions">
-      <input type="submit" value="Login" class="submit-btn">
+      <input type="submit" value="Login" class="submit-btn" [disabled]="!loginForm.valid">
       <a routerLink="#" class="forgot-password">Forgot password?</a>
     </div>
     <p>Don't have an account? <a routerLink="/signup" id="signup-btn">Sign up</a></p>
 
     <div *ngIf="errorMessage" class="error-message">
       <img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">
-      {{ errorMessage }}
+      <div >{{ errorMessage }}</div>
     </div>
 
   </form>
