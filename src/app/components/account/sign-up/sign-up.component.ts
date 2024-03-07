@@ -44,14 +44,14 @@ export class SignUpComponent {
 
     this._accountService.signUp(account).subscribe(
       ()=>{
-        this.successMessage = 'Player registered successfully'
+        this.successMessage = 'User registered successfully'
         this.errorMessage = null;
         this.resetForm();
       }, (error) => {
         if (error.error.message) {
           this.errorMessage = error.error.message;
         } else {
-          this.errorMessage = 'Error registering player';
+          this.errorMessage = 'Error registering user';
         }
         this.successMessage = null;
       }

@@ -7,13 +7,15 @@ import {LoginComponent} from "./login/login.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {HttpClientModule} from "@angular/common/http";
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { EditAccountComponent } from './edit-account/edit-account.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignUpComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    EditAccountComponent
   ],
   imports: [
     CommonModule,

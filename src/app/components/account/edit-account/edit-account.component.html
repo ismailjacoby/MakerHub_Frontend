@@ -1,0 +1,62 @@
+<div class="signup-container">
+
+  <h2>Edit Account</h2>
+
+  <div class="toggle-switch">
+    <label class="switch">
+      <input type="checkbox" (change)="toggleEditMode()" [checked]="editMode">
+      <span class="slider round"></span>
+    </label>
+    <span>Toggle Edit Mode</span>
+  </div>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="save()">
+    <!-- Username -->
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" placeholder="*Username" formControlName="username">
+
+    <!-- First Name -->
+    <label for="firstName">First Name</label>
+    <input  id="firstName" type="text" name="firstName" placeholder="*First Name" formControlName="firstName" [disabled]="!editMode">
+    <div *ngIf="form.controls['firstName'].invalid && form.controls['firstName'].touched" class="error-message"><img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">First name is required</div>
+
+    <!-- Last Name -->
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" name="lastName" placeholder="*Last Name" formControlName="lastName" [disabled]="!editMode">
+    <div *ngIf="form.controls['lastName'].invalid && form.controls['lastName'].touched" class="error-message"><img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">Last name is required</div>
+
+    <!-- Email -->
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" placeholder="*Email" formControlName="email" [disabled]="!editMode">
+    <div *ngIf="form.controls['email']?.invalid && form.controls['email']?.touched" class="error-message"><img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">Email is required</div>
+
+    <!-- Button -->
+    <input type="submit" value="Save" class="submit-btn" [disabled]="!form.valid">
+  </form>
+
+  <div class="message-box">
+    <div *ngIf="successMessage" class="message success-message">
+      <img src="assets/images/404/check-circle.png" alt="Success Icon" class="error-icon">
+      <span>{{ successMessage }}</span>
+    </div>
+    <div *ngIf="errorMessage" class="message error-message">
+      <img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">
+      <span>{{ errorMessage }}</span>
+    </div>
+  </div>
+  <div class="button-container">
+    <button type="button" class="delete-btn" (click)="deleteAccount()">Delete Account</button>
+  </div>
+
+</div>
+
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Are you sure you want to delete your account?</p>
+    <div class="buttons-container">
+      <button (click)="closeModal()" class="modal-btn">Yes</button>
+      <button (click)="closeModal()" class="modal-btn">No</button>
+    </div>
+  </div>
+</div>
