@@ -222,13 +222,11 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 .modal-btn:hover{
   transform: scale(1.025);
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: 1px solid black;
-  color: black;
+  background-color: #EF3232;
 }

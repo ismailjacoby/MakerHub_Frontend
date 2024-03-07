@@ -114,14 +114,14 @@ h2{
 }
 
 .wishlist-icon button:hover{
-  transform: scale(1.05);
+  transform: scale(1.025);
   background-color: #EF3232;
 }
 .shopping-icon button{
   transition: 0.2s;
 }
 .shopping-icon button:hover{
-  transform: scale(1.05);
+  transform: scale(1.025);
   background-color: #EF3232;
 }
 
@@ -141,7 +141,6 @@ h2{
   font-family: 'Sequel', sans-serif;
   color: white;
   cursor: pointer;
-  align-items: center;
   border-radius: 5px;
 }
 
@@ -219,7 +218,7 @@ h2{
   transition: 0.2s;
 }
 .license-btn:hover{
-  transform: scale(1.05);
+  transform: scale(1.025);
   background-color: #EF3232;
   cursor: pointer;
 }

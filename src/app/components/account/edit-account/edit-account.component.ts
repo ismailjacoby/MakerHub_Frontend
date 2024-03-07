@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../../services/account.service";
 import {User} from "../../../models/User";
+import {AuthService} from "../../../services/auth.service";
+import {Router} from "@angular/router";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-edit-account',
@@ -13,8 +16,10 @@ export class EditAccountComponent implements OnInit{
   editMode: boolean = false;
   successMessage: string = '';
   errorMessage: string = '';
+  isAdmin: boolean = this._authService.isAdmin();
+  isClient: boolean = this._authService.isClient();
 
-  constructor(private _formBuilder: FormBuilder, private _accountService: AccountService) {
+  constructor(private _formBuilder: FormBuilder, private _accountService: AccountService, private _authService: AuthService, private _router : Router) {
   }
 
   ngOnInit(): void {
@@ -82,7 +87,20 @@ export class EditAccountComponent implements OnInit{
   }
 
   deleteAccount() {
-    this.openModal()
+    const username = localStorage.getItem('username');
+    if(username){
+      this._accountService.deactivateAccount(username).subscribe({
+        next: () => {
+          console.log('Account deleted successfully');
+          this.successMessage = 'Account deleted successfully';
+          this._authService.logout();
+          this._router.navigate(['account/login']);
+        },
+        error: (error) => {
+          this.errorMessage = error.error.message;
+        }
+      });
+    }
   }
 
   openModal() {

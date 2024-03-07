@@ -20,9 +20,7 @@ h2{
   margin: 5px;
   transition: 0.05s;
 }
-.gallery-section img:hover{
-  transform: scale(1.02);
-}
+
 
 /* Gear List Styles */
 .gear-section ul {

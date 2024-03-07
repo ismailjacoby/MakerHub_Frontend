@@ -3,6 +3,7 @@ import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../../services/account.service";
+import {passwordMinLength} from "../../../utils/validators/passwordMinLength";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent {
               private _formBuilder: FormBuilder) {
     this.loginForm = _formBuilder.group({
         username: _formBuilder.control('', Validators.required),
-        password: _formBuilder.control('', Validators.required)
+        password: _formBuilder.control('', [Validators.required,passwordMinLength()])
       }
     )
   }
@@ -35,12 +36,10 @@ export class LoginComponent {
           if(error.status == 403){
             this.errorMessage = 'Invalid username or password';
           } else{
-            this.errorMessage = 'An error occurred. Please try again later.';
+            this.errorMessage = error.error.message;
           }
         }
       )
 
   }
-
-
 }

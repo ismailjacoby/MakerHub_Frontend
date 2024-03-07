@@ -22,7 +22,7 @@ h2{
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
 }
@@ -38,26 +38,22 @@ h2{
   border: none;
   background-color: #000;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
-  transition: 0.1s ;
+  transition: 0.2s ;
 }
 
 .submit-btn:hover {
   transform: scale(1.025);
-  text-decoration: underline;
+  background-color: #EF3232;
   cursor: pointer;
 }
 
 .submit-btn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
-}
-
-.message-box {
-  margin-top: 20px;
 }
 
 .success-message, .error-message {
@@ -79,13 +75,11 @@ h2{
 .error-message {
   font-family: 'Sequel', sans-serif;
   color: #EF3232;
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .error-icon {
@@ -104,6 +98,7 @@ h2{
   display: inline-block;
   width: 50px;
   height: 20px;
+
 }
 
 /* Hide default checkbox */
@@ -147,9 +142,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(20px);
 }
 
 /* Rounded sliders */
@@ -189,21 +182,28 @@ input:disabled{
 }
 
 .delete-btn {
-  width: 25%;
+  width: 30%;
   margin: 0 auto;
   padding: 10px;
   border: none;
-  background-color: #e75151;
+  background-color: #EF3232;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
   font-family: 'Sequel', sans-serif;
   font-size: 10px;
+  transition: 0.2s;
 }
 
-.delete-btn:hover {
-  background-color: #EF3232;
+.delete-btn:disabled{
+  background-color: #e86464;
+  cursor: not-allowed;
 }
+
+.delete-btn:hover{
+  transform: scale(1.025);
+}
+
 
 
 .modal {
@@ -258,7 +258,5 @@ input:disabled{
 .modal-btn:hover{
   transform: scale(1.025);
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: 1px solid black;
-  color: black;
+  background-color: #EF3232;
 }

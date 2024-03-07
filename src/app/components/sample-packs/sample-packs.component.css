@@ -12,7 +12,7 @@ h2{
 .sample-pack-cover img{
   width: 225px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .sample-pack-list{
   font-family: 'Sequel', sans-serif;
@@ -52,7 +52,7 @@ h2{
   color: white;
   background-color: black;
   border: none;
-  border-radius: 1px;
+  border-radius: 5px;
   height: 25px;
   margin: 5px;
   font-family: 'Sequel', sans-serif;
@@ -65,7 +65,7 @@ h2{
   font-size: 14px;
 }
 .sample-pack-button:hover{
-  transform: scale(1.05);
+  transform: scale(1.025);
   cursor: pointer;
   background-color: #EF3232;
 }

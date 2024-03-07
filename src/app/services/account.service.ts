@@ -26,6 +26,9 @@ export class AccountService {
   editAccount(user: User): Observable<any> {
     return this._http.post<any>('http://localhost:8080/account/editaccount', user);
   }
+  deactivateAccount(username: string): Observable<any> {
+    return this._http.patch<any>(`http://localhost:8080/account/deactivate/${username}`, null);
+  }
 
 
 }

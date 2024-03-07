@@ -12,7 +12,7 @@
 
   <form class="form" [formGroup]="form" (ngSubmit)="save()">
     <!-- Username -->
-    <label for="username">Username</label>
+    <label for="username">Username <span *ngIf="editMode">(Not editable)</span></label>
     <input id="username" type="text" name="username" placeholder="*Username" formControlName="username">
 
     <!-- First Name -->
@@ -44,8 +44,8 @@
       <span>{{ errorMessage }}</span>
     </div>
   </div>
-  <div class="button-container">
-    <button type="button" class="delete-btn" (click)="deleteAccount()">Delete Account</button>
+  <div class="button-container" *ngIf="isClient">
+    <button type="button" class="delete-btn" (click)="openModal()" [disabled]="!editMode">Deactivate Account</button>
   </div>
 
 </div>
@@ -53,9 +53,9 @@
 <div id="deleteModal" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
-    <p>Are you sure you want to delete your account?</p>
+    <p>Are you sure you want to deactivate your account?</p>
     <div class="buttons-container">
-      <button (click)="closeModal()" class="modal-btn">Yes</button>
+      <button (click)="deleteAccount()" class="modal-btn">Yes</button>
       <button (click)="closeModal()" class="modal-btn">No</button>
     </div>
   </div>

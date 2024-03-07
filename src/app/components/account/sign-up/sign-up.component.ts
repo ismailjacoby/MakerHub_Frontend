@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../../services/account.service";
 import {Route, Router} from "@angular/router";
-import {passwordMinLength} from "../../../validations/passwordMinLength";
+import {passwordMinLength} from "../../../utils/validators/passwordMinLength";
 
 export interface Account{
   username: string;
