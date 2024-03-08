@@ -3,7 +3,7 @@
 
   <div class="filter-container">
     <div class="filter-input">
-      <input type="text" placeholder="Search">
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterClients()" placeholder="Search">
   </div>
 
   <table>
@@ -19,7 +19,7 @@
 
     <!--Table Rows-->
     <tbody>
-      <tr *ngFor="let client of clients">
+      <tr *ngFor="let client of filteredClients">
         <td>{{client.username}}</td>
         <td>{{client.firstName}}</td>
         <td>{{client.lastName}}</td>
@@ -34,7 +34,7 @@
 
           <!--Block Icon-->
           <img src="assets/images/manageclients/blocked.png" (click)="changeBlockedStatus(client.username)" alt="Click to unblock user" class="icon-action" *ngIf="client.blocked">
-          <img src="assets/images/manageclients/notblocked.png"(click)="changeBlockedStatus(client.username)" alt="Click to block user" class="icon-action" *ngIf="!client.blocked">
+          <img src="assets/images/manageclients/notblocked.png" (click)="changeBlockedStatus(client.username)" alt="Click to block user" class="icon-action" *ngIf="!client.blocked">
 
         </td>
       </tr>

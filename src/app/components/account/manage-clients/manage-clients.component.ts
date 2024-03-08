@@ -9,6 +9,8 @@ import {AccountService} from "../../../services/account.service";
 })
 export class ManageClientsComponent implements OnInit{
   clients: User[] = [];
+  filteredClients: User[] = [];
+  searchTerm: string = '';
   sortColumn: string | null = null;
   sortDirection: 'asc' | 'desc' = 'asc';
 
@@ -17,19 +19,20 @@ export class ManageClientsComponent implements OnInit{
   ngOnInit(): void {
     this._accountService.getAllClient().subscribe((data) => {
       this.clients = data;
+      this.filteredClients = data;
     });
   }
 
   changeActiveStatus(username: string){
     this._accountService.deactivateAccount(username).subscribe(()=>
       this._accountService.getAllClient().subscribe(
-        (data)=> this.clients=data));
+        (data)=> this.filteredClients=data));
   }
 
   changeBlockedStatus(username:string){
     this._accountService.blockAccount(username).subscribe(()=>
       this._accountService.getAllClient().subscribe(
-        (data)=>this.clients=data));
+        (data)=>this.filteredClients=data));
   }
 
   sortData(column: keyof User): void {
@@ -60,8 +63,19 @@ export class ManageClientsComponent implements OnInit{
     });
   }
 
-
-
+  filterClients(): void {
+    if (!this.searchTerm) {
+      this.filteredClients = this.clients;
+    } else {
+      const lowerCaseSearchTerm = this.searchTerm.toLowerCase();
+      this.filteredClients = this.clients.filter(client =>
+        client.username.toLowerCase().includes(lowerCaseSearchTerm) ||
+        client.firstName.toLowerCase().includes(lowerCaseSearchTerm) ||
+        client.lastName.toLowerCase().includes(lowerCaseSearchTerm) ||
+        client.email.toLowerCase().includes(lowerCaseSearchTerm)
+      );
+    }
+  }
 
 }
 

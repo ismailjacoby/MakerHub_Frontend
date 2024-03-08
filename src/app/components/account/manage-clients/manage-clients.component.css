@@ -75,6 +75,10 @@ tbody{
   font-size: 10px;
 }
 
+th{
+  cursor: pointer;
+}
+
 tr{
   height: 35px;
 }
