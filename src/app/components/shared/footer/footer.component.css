@@ -1,3 +1,4 @@
+/* Footer Settings */
 footer{
   position: fixed;
   width: 100%;
@@ -6,11 +7,12 @@ footer{
   justify-content: space-evenly;
   background-color: black;
   color: white;
-  font-family: 'Sequel';
+  font-family: 'Sequel', sans-serif;
   font-size: 10px;
   padding: 10px;
 }
-/* Titles */
+
+/* Title */
 h2{
   font-family: 'Drukwide', sans-serif;
   font-size: 12px;
@@ -39,7 +41,7 @@ a:hover{
   width: 150px;
   height: 20px;
   margin-right: 0.25em;
-  font-family: Sequel;
+  font-family: 'Sequel', sans-serif;
   font-size: 8px;
   outline-color: black;
 }
@@ -59,7 +61,6 @@ a:hover{
 }
 
 /*Get In Touch*/
-
 .social-icons{
   display: flex;
 }
@@ -76,6 +77,7 @@ span{
   font-size: 8px;
 }
 
+/* Mobile */
 @media (max-width: 1200px) {
   .show{
     display: none;

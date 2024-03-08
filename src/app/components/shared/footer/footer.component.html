@@ -1,4 +1,7 @@
+<!-- Main Content -->
 <footer class="footer">
+
+  <!-- Company Section -->
   <div class="footer-informations show">
     <h2>Hybridvision Sarl-s</h2>
     <div class="company-information">
@@ -7,6 +10,7 @@
     </div>
   </div>
 
+  <!-- Links Section -->
   <div class="footer-links show">
     <h2>Links</h2>
     <ul>
@@ -19,6 +23,7 @@
     </ul>
   </div>
 
+  <!-- Guidelines Section -->
   <div class="footer-guidelines show">
     <h2>Guidelines</h2>
     <ul>
@@ -29,22 +34,27 @@
     </ul>
   </div>
 
+  <!-- Newsletter Section -->
   <div class="footer-news show">
+    <!-- Newsletter -->
     <h2>Newsletter</h2>
     <form class="subscribe" [formGroup]="form" (ngSubmit)="subscribe()">
       <input type="email" placeholder="Enter your email..." id="newletter-input" formControlName="email">
       <input type="submit" value="Subscribe" id="subscribe-button">
     </form>
 
+    <!-- Success Message -->
     <div *ngIf="successMessage" class="message success-message">
       <span>{{ successMessage }}</span>
       <span class="icon">&#10003;</span>
     </div>
 
+    <!-- Error Message -->
     <div *ngIf="errorMessage" class="message error-message">
       <span>{{ errorMessage }}</span>
     </div>
 
+    <!-- Get in Touch -->
     <div class="get-in-touch">
       <h3>Get in touch</h3>
       <ul class="social-icons">
@@ -54,6 +64,8 @@
       </ul>
     </div>
   </div>
+
+  <!-- Mobile -->
   <div class="mobile-footer">
     &copy; 2024 Hybridvision
   </div>

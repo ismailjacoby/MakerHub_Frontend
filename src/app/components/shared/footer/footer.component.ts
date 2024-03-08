@@ -18,6 +18,9 @@ export class FooterComponent {
     })
   }
 
+  /*
+  * Subscribe to a newsletter
+  */
   subscribe():void{
     if(this.form.valid){
       const email = this.form.value.email;

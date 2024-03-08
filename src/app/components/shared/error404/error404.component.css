@@ -1,8 +1,4 @@
-.error-container {
-  text-align: center;
-  margin-top: 100px;
-}
-
+/*404*/
 h1 {
   font-family: 'Drukwide', sans-serif;
   font-size: 200px;
@@ -12,12 +8,25 @@ h1 {
   justify-content: center;
 }
 
+/* Headphone */
+#headphones-icon{
+  height: 300px;
+}
+
+/* Message container*/
+.error-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Message */
 p {
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
   margin-bottom: 20px;
 }
 
+/* Button */
 button {
   padding: 10px 20px;
   background-color: black;
@@ -33,8 +42,4 @@ button {
 button:hover {
   transform: scale(1.025);
   background-color: #EF3232;
-}
-
-#headphones-icon{
-  height: 300px;
 }
