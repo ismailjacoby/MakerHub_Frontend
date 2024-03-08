@@ -9,6 +9,7 @@
   top: 0;
 }
 
+/* Nav spacing */
 .header-content {
   margin: 0 100px;
   display: flex;
@@ -29,11 +30,9 @@
 .nav-links ul {
   list-style-type: none;
 }
-
 .nav-links li {
   margin-right: 20px;
 }
-
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -49,6 +48,8 @@
   height: auto;
   filter: invert(1);
 }
+
+/* Align Icons in a row */
 .nav-icons {
   display: flex;
   align-items: center;
@@ -66,6 +67,7 @@
   vertical-align: middle;
 }
 
+/* Hamburger Menu */
 .hamburger{
   display: none;
   color: white;
@@ -74,10 +76,8 @@
 .hamburger-icon{
   width: 30px;
 }
-.nav-links--open{
-  transform: translateX(0);
-}
 
+/* Login */
 .btn-login{
   background-color: black;
   margin-left: 50px;
@@ -91,6 +91,7 @@
   color: black;
   cursor: pointer;
 }
+
 /* Dropdown */
 .dropdown {
   position: relative;
@@ -172,8 +173,9 @@
   .hamburger{
     display: block;
   }
-
 }
+
+/* Modal Content */
 .modal {
   display: none;
   position: fixed;
@@ -186,7 +188,6 @@
   background-color: rgba(0,0,0,0.5);
 }
 
-/* Modal Content */
 .modal-content {
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
