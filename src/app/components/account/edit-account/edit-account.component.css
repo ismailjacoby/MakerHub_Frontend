@@ -1,3 +1,4 @@
+/* Main container */
 .signup-container {
   max-width: 500px;
   margin: 0 auto;
@@ -5,18 +6,30 @@
   border-radius: 8px;
 }
 
+/* Title */
 h2{
   font-family: 'Drukwide', sans-serif;
   font-size: 20px;
   text-align: center;
 }
 
+/* Form */
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Label */
+.form label {
+  align-self: flex-start;
+  width: 83%;
+  margin: 0 auto 5px;
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+}
+
+/* Form - Input */
 .form input {
   width: 80%;
   margin-bottom: 15px;
@@ -27,11 +40,8 @@ h2{
   font-size: 12px;
 }
 
-.form input[readonly] {
-  background-color: #f3f3f3;
-  cursor: not-allowed;
-}
 
+/* Form - Button */
 .submit-btn {
   width: 80%;
   padding: 10px;
@@ -56,6 +66,7 @@ h2{
   cursor: not-allowed;
 }
 
+/* Message */
 .success-message, .error-message {
   display: flex;
   align-items: center;
@@ -66,12 +77,14 @@ h2{
   font-size: 14px;
 }
 
+/* Success Message */
 .success-message {
   font-family: 'Sequel', sans-serif;
   color: #32ef3b;
   font-size: 12px;
 }
 
+/* Error Message */
 .error-message {
   font-family: 'Sequel', sans-serif;
   color: #EF3232;
@@ -82,13 +95,10 @@ h2{
   text-align: center;
 }
 
+/* Error Icon */
 .error-icon {
   width: 20px;
   height: 20px;
-  margin-right: 5px;
-}
-
-.error-icon {
   margin-right: 5px;
 }
 
@@ -98,7 +108,6 @@ h2{
   display: inline-block;
   width: 50px;
   height: 20px;
-
 }
 
 /* Hide default checkbox */
@@ -168,13 +177,8 @@ input:checked + .slider:before {
 input:disabled{
   cursor: not-allowed;
 }
-.form label {
-  align-self: flex-start;
-  width: 83%;
-  margin: 0 auto 5px;
-  font-family: 'Sequel', sans-serif;
-  font-size: 10px;
-}
+
+
 
 .button-container{
   display: flex;
@@ -244,6 +248,7 @@ input:disabled{
   cursor: pointer;
 }
 
+/* Modal Button */
 .modal-btn{
   background-color: black;
   color: white;

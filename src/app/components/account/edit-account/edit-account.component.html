@@ -1,15 +1,20 @@
+<!-- Main Container -->
 <div class="signup-container">
-
+  <!-- Title -->
   <h2>Edit Account</h2>
 
+  <!-- Toggle Switch -->
   <div class="toggle-switch">
+    <!-- Switch -->
     <label class="switch">
       <input type="checkbox" (change)="toggleEditMode()" [checked]="editMode">
       <span class="slider round"></span>
     </label>
+    <!-- Text -->
     <span>Toggle Edit Mode</span>
   </div>
 
+  <!-- Form -->
   <form class="form" [formGroup]="form" (ngSubmit)="save()">
     <!-- Username -->
     <label for="username">Username <span *ngIf="editMode">(Not editable)</span></label>
@@ -34,28 +39,39 @@
     <input type="submit" value="Save" class="submit-btn" [disabled]="!form.valid">
   </form>
 
+  <!-- Message Box -->
   <div class="message-box">
+    <!-- Success Message -->
     <div *ngIf="successMessage" class="message success-message">
       <img src="assets/images/404/check-circle.png" alt="Success Icon" class="error-icon">
       <span>{{ successMessage }}</span>
     </div>
+
+    <!-- Error Message -->
     <div *ngIf="errorMessage" class="message error-message">
       <img src="assets/images/404/warning-circle.png" alt="Error Icon" class="error-icon">
       <span>{{ errorMessage }}</span>
     </div>
   </div>
+
+  <!-- Deactivate Account Button -->
   <div class="button-container" *ngIf="isClient">
     <button type="button" class="delete-btn" (click)="openModal()" [disabled]="!editMode">Deactivate Account</button>
   </div>
-
 </div>
 
+<!-- Modal - Confirm Deactivation -->
 <div id="deleteModal" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
+    <!-- Question -->
     <p>Are you sure you want to deactivate your account?</p>
+
+    <!-- Buttons -->
     <div class="buttons-container">
+      <!-- Yes -->
       <button (click)="deleteAccount()" class="modal-btn">Yes</button>
+      <!-- No -->
       <button (click)="closeModal()" class="modal-btn">No</button>
     </div>
   </div>

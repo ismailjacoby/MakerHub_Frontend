@@ -23,7 +23,7 @@ export class ContactComponent{
 
   /*
   * Sends an email via the contact form
-  * */
+  */
   onSubmit(){
     if(this.contactForm.valid){
       this._contactService.sendContactForm(this.contactForm.value).subscribe(
