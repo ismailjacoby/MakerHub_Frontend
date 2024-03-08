@@ -160,7 +160,7 @@ h2{
 
 
 /* Licensing */
-
+/* License - Section */
 .license-section {
   font-family: Sequel, sans-serif;
   font-size: 12px;
@@ -173,6 +173,7 @@ h2{
   width: 95%;
 }
 
+/* License - Card */
 .license {
   width: 250px;
   padding: 20px;
@@ -182,7 +183,6 @@ h2{
   box-shadow: 2px 2px 5px  rgba(0, 0, 0, .1);
   transition: 0.2s;
 }
-
 
 .license h3 {
   font-family: 'Drukwide', sans-serif;
@@ -206,6 +206,7 @@ h2{
   font-size: 10px;
 }
 
+/* License - Read License */
 .license-btn{
   font-family: 'Sequel', sans-serif;
   background-color: black;
@@ -217,12 +218,14 @@ h2{
   margin-top: 10px;
   transition: 0.2s;
 }
+
 .license-btn:hover{
   transform: scale(1.025);
   background-color: #EF3232;
   cursor: pointer;
 }
 
+/* Mobile */
 @media screen and (max-width: 600px) {
   .license {
     width: calc(50% - 20px); /* Make licenses half the width of the container with some margin */
