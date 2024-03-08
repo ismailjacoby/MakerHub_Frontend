@@ -1,10 +1,10 @@
+/* Title */
 h2{
   font-family: 'Drukwide', sans-serif;
   font-size: 20px;
 }
 
 /* Filter */
-
 .filter-container {
   display: block;
 }
@@ -17,14 +17,14 @@ h2{
   outline-color: black;
 }
 
-/* Table */
-
+/* Filter Container */
 .manage-clients-container{
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 
+/* Rows */
 .manage-clients-list{
   width: 80%;
   margin: 0 auto;
@@ -34,12 +34,7 @@ h2{
   justify-content: space-between;
 }
 
-.client-infos{
-  padding: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
+/* Icons */
 .icon-action{
   margin-left: 5px;
   height: 20px;
@@ -53,6 +48,7 @@ h2{
   opacity: 1;
 }
 
+/* Sort Icon */
 .sort-icon{
   vertical-align: middle;
   height: 15px;
@@ -61,7 +57,6 @@ h2{
 }
 
 /* Table */
-
 table{
   width: 80%;
   margin: 25px auto 0;

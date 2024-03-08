@@ -1,11 +1,17 @@
+<!-- Main Container -->
 <div class="manage-clients-container">
+
+  <!-- Title -->
   <h2>Manage Clients</h2>
 
+  <!-- Filter -->
   <div class="filter-container">
     <div class="filter-input">
       <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterClients()" placeholder="Search">
+    </div>
   </div>
 
+    <!-- Table -->
   <table>
     <!--Table Header-->
     <thead>
@@ -25,6 +31,8 @@
         <td>{{client.firstName}}</td>
         <td>{{client.lastName}}</td>
         <td>{{client.email}}</td>
+
+        <!-- Actions -->
         <td>
           <!--View Icon-->
           <img src="assets/images/manageclients/eye.png" routerLink="../user/{{client.username}}" title="View Client Detail" alt="View Icon" class="icon-action">
@@ -40,9 +48,5 @@
         </td>
       </tr>
     </tbody>
-
-
   </table>
-
 </div>
-
