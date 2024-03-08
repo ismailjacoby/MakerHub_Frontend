@@ -10,11 +10,10 @@
     <!--Table Header-->
     <thead>
       <tr>
-        <th>Username</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Actions</th>
+        <th (click)="sortData('username')">Username<span *ngIf="sortColumn === 'username'"><img src="assets/images/manageclients/{{sortDirection === 'asc' ? 'arrow-up.svg' : 'arrow-down.svg'}}" class="sort-icon" alt="Sort Icon"></span></th>
+        <th (click)="sortData('firstName')">Firstname<span *ngIf="sortColumn === 'firstName'"><img src="assets/images/manageclients/{{sortDirection === 'asc' ? 'arrow-up.svg' : 'arrow-down.svg'}}" class="sort-icon" alt="Sort Icon"></span></th>
+        <th (click)="sortData('lastName')">Lastname<span *ngIf="sortColumn === 'lastName'"><img src="assets/images/manageclients/{{sortDirection === 'asc' ? 'arrow-up.svg' : 'arrow-down.svg'}}" class="sort-icon" alt="Sort Icon"></span></th>
+        <th (click)="sortData('email')">Email<span *ngIf="sortColumn === 'email'"><img src="assets/images/manageclients/{{sortDirection === 'asc' ? 'arrow-up.svg' : 'arrow-down.svg'}}" class="sort-icon" alt="Sort Icon"></span></th>
       </tr>
     </thead>
 

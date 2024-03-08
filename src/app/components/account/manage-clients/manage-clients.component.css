@@ -53,6 +53,12 @@ h2{
   opacity: 1;
 }
 
+.sort-icon{
+  vertical-align: middle;
+  height: 15px;
+  width: auto;
+}
+
 /* Table */
 
 table{

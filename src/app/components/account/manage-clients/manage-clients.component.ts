@@ -9,6 +9,8 @@ import {AccountService} from "../../../services/account.service";
 })
 export class ManageClientsComponent implements OnInit{
   clients: User[] = [];
+  sortColumn: string | null = null;
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(private _accountService: AccountService) {}
 
@@ -29,6 +31,36 @@ export class ManageClientsComponent implements OnInit{
       this._accountService.getAllClient().subscribe(
         (data)=>this.clients=data));
   }
+
+  sortData(column: keyof User): void {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumn = column;
+      this.sortDirection = 'asc';
+    }
+
+    this.clients.sort((a, b) => {
+      let aValue = a[column];
+      let bValue = b[column];
+
+      // If comparing strings, you might want to ensure they are compared in a case-insensitive manner
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+      }
+
+      if (aValue < bValue) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (aValue > bValue) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+
+
 
 
 }
