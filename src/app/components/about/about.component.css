@@ -1,19 +1,23 @@
-p, li{
-  font-family: Sequel,sans-serif;
-  font-size: 12px;
-}
+/* Title */
 h2{
   font-family: 'Drukwide', sans-serif;
   font-size: 20px;
 }
-/* Section Styling */
+
+/* Description and Gear Font */
+p, li{
+  font-family: Sequel,sans-serif;
+  font-size: 12px;
+}
+
+/* Section alignments */
 .about-section, .gallery-section, .gear-section {
   width: 75%;
   margin: 2em auto 0;
   text-align: center;
 }
 
-/* Gallery Styles */
+/* Images */
 .gallery-section img {
   width: 400px;
   border-radius: 10px;
@@ -21,23 +25,14 @@ h2{
   transition: 0.05s;
 }
 
-
-/* Gear List Styles */
+/* Remove UL Padding */
 .gear-section ul {
-  list-style-type: none;
   padding: 0;
 }
 
+/* Gear list spacing, alignment and decoration */
 .gear-section ul li {
+  list-style-type: none;
   margin: 10px 0;
-}
-
-.gear-section ul li:before {
-  color: #007bff;
-  font-size: 18px;
-  margin-right: 10px;
-}
-
-.gear-section ul li {
   text-align: center;
 }

@@ -1,14 +1,12 @@
+/* Main title */
 h2{
   font-family: 'Drukwide', sans-serif;
   text-align: center;
   font-size: 20px;
 }
-h3{
-  font-family: 'Drukwide', sans-serif;
-  font-size: 18px;
-}
 
 
+/* Card Flexbox */
 .services-container {
   display: flex;
   justify-content: center;
@@ -18,6 +16,7 @@ h3{
   margin: 0 auto;
 }
 
+/* Card settings */
 .service-card {
   width: 350px;
   height: 250px;
@@ -30,37 +29,46 @@ h3{
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .service-card:hover {
   background-color: #e8e8e8;
 }
 
+/* Card Icons */
 .service-icon img {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
 }
 
-.service-card h2 {
-  margin-top: 0;
-  overflow: hidden;
+/* Card Title */
+h3{
+  font-family: 'Drukwide', sans-serif;
+  font-size: 18px;
 }
 
+/* Card description */
 .service-card p {
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
   margin-bottom: 0;
 }
 
+/* Interested Section */
 .interested{
   font-family: 'Sequel', sans-serif;
   font-size: 12px;
   text-align: center;
   margin-bottom: 50px;
 }
+
+/* Interested paragraph */
 .interested p{
   margin-bottom: 25px;
 }
 
+
+/* Contact Button */
 .interested input{
   font-size: 12px;
   font-family: 'Sequel', sans-serif;
@@ -77,5 +85,4 @@ h3{
   transform: scale(1.025);
   background-color: #EF3232;
   cursor: pointer;
-
 }
