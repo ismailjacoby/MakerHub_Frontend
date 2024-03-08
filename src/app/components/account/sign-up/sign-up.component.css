@@ -1,9 +1,17 @@
+/* Main Container */
 .signup-container {
   max-width: 500px;
   text-align: center;
   margin: 0 auto;
 }
 
+/* Title */
+h2 {
+  font-family: 'Drukwide', sans-serif;
+}
+
+
+/* Input */
 .form input {
   padding: 10px;
   width: 80%;
@@ -16,6 +24,7 @@
   outline-color: black;
 }
 
+/* Submit Button */
 .submit-btn {
   border: none;
   background-color: black;
@@ -33,10 +42,7 @@
   text-decoration: underline;
 }
 
-h2 {
-  font-family: 'Drukwide', sans-serif;
-}
-
+/* Login */
 p{
   font-family: 'Sequel', sans-serif;
   font-size: 10px;
@@ -50,6 +56,7 @@ p{
   cursor: pointer;
 }
 
+/* Message */
 .message-box{
   text-align: center;
   display: flex;
@@ -64,12 +71,14 @@ p{
   margin-bottom: 10px;
 }
 
+/* Success Message */
 .success-message {
   font-family: 'Sequel', sans-serif;
   color: #32ef3b;
   font-size: 12px;
 }
 
+/* Error Message */
 .error-message {
   font-family: 'Sequel', sans-serif;
   color: #EF3232;
@@ -82,6 +91,7 @@ p{
   margin-bottom: 10px;
 }
 
+/* Error Icon */
 .error-icon {
   width: 20px;
   height: 20px;
