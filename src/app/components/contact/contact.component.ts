@@ -7,7 +7,7 @@ import {ContactService} from "../../services/contact.service";
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent{
   contactForm!: FormGroup;
 
   constructor(private _formBuilder: FormBuilder, private _contactService: ContactService) {
@@ -21,10 +21,9 @@ export class ContactComponent implements OnInit{
     })
   }
 
-  ngOnInit() {
-
-  }
-
+  /*
+  * Sends an email via the contact form
+  * */
   onSubmit(){
     if(this.contactForm.valid){
       this._contactService.sendContactForm(this.contactForm.value).subscribe(
@@ -40,9 +39,4 @@ export class ContactComponent implements OnInit{
       console.log("Form not valid")
     }
   }
-
-
-
-
-
 }
