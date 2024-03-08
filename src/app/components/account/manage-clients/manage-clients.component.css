@@ -57,6 +57,7 @@ h2{
   vertical-align: middle;
   height: 15px;
   width: auto;
+  filter: invert(1);
 }
 
 /* Table */
@@ -77,6 +78,8 @@ tbody{
 
 th{
   cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 tr{

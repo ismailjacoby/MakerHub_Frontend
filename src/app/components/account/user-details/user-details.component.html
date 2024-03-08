@@ -1,0 +1,39 @@
+<div class="user-details-container">
+  <h2>User Informations</h2>
+  <div class="information-box">
+    <div class="user-information">
+      <div class="information">
+        Username: {{client.username}}
+      </div>
+      <div  class="information">
+        Firstname: {{client.firstName}}
+      </div>
+      <div  class="information">
+        Lastname: {{client.lastName}}
+      </div>
+      <div  class="information">
+        Email: {{client.email}}
+      </div>
+    </div>
+
+    <div class="purchased-items">
+      <ul>
+        <li>Item 1 - Date of Purchase: 03/03/2024 - License: Basic</li>
+        <li>Item 2 - Date of Purchase: 16/04/2024 - License: Premium</li>
+        <li>Item 3 - Date of Purchase: 24/05/2024 - License: Basic</li>
+      </ul>
+    </div>
+
+    <div class="btn-container">
+      <button (click)="changeActiveStatus(client.username)" *ngIf="client.active"><img src="assets/images/manageclients/lock.svg" alt="Lock Icon">Deactivate Account</button>
+      <button (click)="changeActiveStatus(client.username)" *ngIf="!client.active"><img src="assets/images/manageclients/lock-key-open.svg" alt="Lock Icon">Activate Account</button>
+
+      <button (click)="changeBlockedStatus(client.username)" *ngIf="!client.blocked"><img src="assets/images/manageclients/lock.svg" alt="Lock Icon">Block Account</button>
+      <button (click)="changeBlockedStatus(client.username)" *ngIf="client.blocked"> <img src="assets/images/manageclients/lock-key-open.svg" alt="Lock Icon" class="btn-icon">Unblock Account</button>
+    </div>
+  </div>
+
+  <div class="link-container">
+    <a routerLink="../../manageclients">Back to manage clients</a>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
 import { ManageClientsComponent } from './manage-clients/manage-clients.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ManageClientsComponent } from './manage-clients/manage-clients.componen
     SignUpComponent,
     ForgotpasswordComponent,
     EditAccountComponent,
-    ManageClientsComponent
+    ManageClientsComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

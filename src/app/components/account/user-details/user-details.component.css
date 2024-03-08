@@ -1,0 +1,85 @@
+h2 {
+  font-family: 'Drukwide', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.information-box{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+  border: 1px solid black;
+}
+
+.user-information{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+}
+
+.information{
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.btn-container button{
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  transition: 0.2s;
+}
+
+.btn-container button:hover{
+  cursor: pointer;
+  transform: scale(1.025);
+  background-color: #EF3232;
+}
+
+.link-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+a{
+  font-family: 'Sequel', sans-serif;
+  font-size: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button{
+  display: flex;
+  align-items: center;
+}
+
+img{
+  height: 20px;
+  filter: invert(1);
+  vert-align: middle;
+  margin-right: 5px;
+}
+
