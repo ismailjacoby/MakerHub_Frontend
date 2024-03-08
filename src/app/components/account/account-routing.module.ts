@@ -6,13 +6,16 @@ import {ForgotpasswordComponent} from "./forgotpassword/forgotpassword.component
 import {EditAccountComponent} from "./edit-account/edit-account.component";
 import {isLoggedOutGuard} from "../../utils/guards/isLoggedOutGuard";
 import {isLoggedInGuard} from "../../utils/guards/isLoggedInGuard";
+import {ManageClientsComponent} from "./manage-clients/manage-clients.component";
+import {isAdminGuard} from "../../utils/guards/isAdminGuard";
 
 const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, canActivate: [isLoggedOutGuard]},
   {path: 'signup', component:SignUpComponent, canActivate: [isLoggedOutGuard]},
   {path:'forgotpassword', component: ForgotpasswordComponent, canActivate: [isLoggedOutGuard]},
-  {path:'editaccount', component:EditAccountComponent, canActivate: [isLoggedInGuard]}
+  {path:'editaccount', component:EditAccountComponent, canActivate: [isLoggedInGuard]},
+  {path:'manageclients', component: ManageClientsComponent, canActivate:[isAdminGuard]}
 ];
 
 @NgModule({

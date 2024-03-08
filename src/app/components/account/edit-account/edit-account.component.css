@@ -202,9 +202,8 @@ input:disabled{
 
 .delete-btn:hover{
   transform: scale(1.025);
+  text-decoration: underline;
 }
-
-
 
 .modal {
   display: none;

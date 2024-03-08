@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Account} from "../components/account/sign-up/sign-up.component";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {User} from "../models/User";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+
+  private clients: User[] = [
+    { username: 'johnDoe', firstName: 'John', lastName: 'Doe', email: 'john@example.com', active: true, blocked: true },
+    { username: 'janeDoe', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', active: false, blocked: false },
+  ];
 
   constructor(private _http: HttpClient) { }
 
@@ -28,6 +33,13 @@ export class AccountService {
   }
   deactivateAccount(username: string): Observable<any> {
     return this._http.patch<any>(`http://localhost:8080/account/deactivate/${username}`, null);
+  }
+  blockAccount(username: string): Observable<any>{
+    return this._http.patch<any>(`http://localhost:8080/account/block/${username}`,null);
+  }
+
+  getAllClient(): Observable<User[]>{
+    return this._http.get<User[]>(`http://localhost:8080/account/clients/all`);
   }
 
 

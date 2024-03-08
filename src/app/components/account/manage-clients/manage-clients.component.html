@@ -1,0 +1,48 @@
+<div class="manage-clients-container">
+  <h2>Manage Clients</h2>
+
+  <div class="filter-container">
+    <div class="filter-input">
+      <input type="text" placeholder="Search">
+  </div>
+
+  <table>
+    <!--Table Header-->
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <!--Table Rows-->
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.username}}</td>
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+        <td>{{client.email}}</td>
+        <td>
+          <!--View Icon-->
+          <img src="assets/images/manageclients/eye.png" title="View Client Detail" alt="View Icon" class="icon-action">
+
+          <!--Actve Icon-->
+          <img src="assets/images/manageclients/x-circle.svg" (click)="changeActiveStatus(client.username)" title="Click to mark user as inactive" alt="Active Icon" *ngIf="client.active" class="icon-action">
+          <img src="assets/images/manageclients/x-circle-blocked.png" (click)="changeActiveStatus(client.username)" title="Click to mark user as active" alt="Inactive Icon" *ngIf="!client.active" class="icon-action">
+
+          <!--Block Icon-->
+          <img src="assets/images/manageclients/blocked.png" (click)="changeBlockedStatus(client.username)" alt="Click to unblock user" class="icon-action" *ngIf="client.blocked">
+          <img src="assets/images/manageclients/notblocked.png"(click)="changeBlockedStatus(client.username)" alt="Click to block user" class="icon-action" *ngIf="!client.blocked">
+
+        </td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+</div>
+

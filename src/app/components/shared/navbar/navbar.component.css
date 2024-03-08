@@ -136,8 +136,6 @@
   display: block;
 }
 
-
-
 /* Mobile Styles */
 @media (max-width: 1200px) {
   .nav-logo{
@@ -229,4 +227,8 @@
   transform: scale(1.025);
   cursor: pointer;
   background-color: #EF3232;
+}
+
+.dropdown-content a:hover img{
+  filter: invert(0);
 }

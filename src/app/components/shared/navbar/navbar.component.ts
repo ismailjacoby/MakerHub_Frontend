@@ -10,6 +10,9 @@ import {Router} from "@angular/router";
 export class NavbarComponent {
   isMenuOpen = false;
   isDropdownOpen: boolean = false;
+  isClient: boolean = this._authService.isClient();
+  isAdmin: boolean = this._authService.isAdmin();
+
 
   constructor(private readonly _authService: AuthService, private _router: Router) { }
 

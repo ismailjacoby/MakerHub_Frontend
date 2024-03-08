@@ -8,6 +8,7 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
 import {HttpClientModule} from "@angular/common/http";
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
+import { ManageClientsComponent } from './manage-clients/manage-clients.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EditAccountComponent } from './edit-account/edit-account.component';
     LoginComponent,
     SignUpComponent,
     ForgotpasswordComponent,
-    EditAccountComponent
+    EditAccountComponent,
+    ManageClientsComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,6 @@ import { EditAccountComponent } from './edit-account/edit-account.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
-
   ]
 })
 export class AccountModule { }

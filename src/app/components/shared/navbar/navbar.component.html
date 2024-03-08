@@ -21,8 +21,9 @@
           <img src="assets/images/icons/navbar/user-circle.svg" alt="Account Icon" class="nav-icon">
         </a>
         <div class="dropdown-content" [class.show]="isDropdownOpen">
-          <a routerLink="account/editaccount"><img src="assets/images/icons/navbar/gear.svg" alt="Gear Icon">Edit Account</a>
-          <a routerLink="#"><img src="assets/images/icons/navbar/download-simple.svg" alt="Download Icon">My Orders</a>
+          <a routerLink="account/editaccount"><img src="assets/images/icons/navbar/gear.svg" alt="Gear Icon" class="dropdown-icon">Edit Account</a>
+          <a routerLink="#" *ngIf="isClient"><img src="assets/images/icons/navbar/download-simple.svg" alt="Download Icon">My Orders</a>
+          <a href="account/manageclients" *ngIf="isAdmin"><img src="assets/images/icons/navbar/users-three.svg" alt="Download Icon">Manage Clients</a>
           <a (click)="openModal()"><img src="assets/images/icons/navbar/power.svg" alt="Logout Icon">Logout</a>
         </div>
       </div>
