@@ -52,6 +52,8 @@ form{
 }
 
 .drop-zone {
+  max-width: 75px;
+  overflow: hidden;
   border: 2px dashed #ccc;
   border-radius: 5px;
   padding: 5px;
