@@ -12,6 +12,7 @@ import {TermsOfUseComponent} from "./components/guidelines/terms-of-use/terms-of
 import {PrivacyPolicyComponent} from "./components/guidelines/privacy-policy/privacy-policy.component";
 import {Error404Component} from "./components/shared/error404/error404.component";
 import {UnsubscribeComponent} from "./components/unsubscribe/unsubscribe.component";
+import {ProductionsModule} from "./components/productions/productions.module";
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'about', component:AboutComponent},
   {path:'services', component:ServicesComponent},
-  {path:'productions', component:ProductionsComponent},
+  {path:'productions', loadChildren: ()=>import('./components/productions/productions.module').then(m => m.ProductionsModule)},
   {path:'samplepacks', component:SamplePacksComponent},
   {path:'contact', component:ContactComponent},
   {path:'account', loadChildren: ()=>import('./components/account/account.module').then(m => m.AccountModule)},
