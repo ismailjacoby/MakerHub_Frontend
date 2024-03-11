@@ -117,11 +117,10 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #007bff;
 }
-<<<<<<< HEAD
+
 .upload-container .drop-zone p {
   font-size: 10px;
   color: #666;
   margin-top: 5px;
 }
-=======
->>>>>>> origin/uploadProduction
+

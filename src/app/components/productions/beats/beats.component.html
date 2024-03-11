@@ -17,7 +17,8 @@
       </select>
     </div>
 
-    <button class="upload-btn" routerLink="../upload"><img src="assets/images/productions/upload-simple.svg" alt="Upload Icon" class="icon-upload">Upload Beat</button>
+
+    <button class="upload-btn" routerLink="../upload" *ngIf="isAdmin"><img src="assets/images/productions/upload-simple.svg" alt="Upload Icon" class="icon-upload">Upload Beat</button>
 
   </div>
 
