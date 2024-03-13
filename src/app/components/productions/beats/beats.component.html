@@ -6,20 +6,17 @@
   <div class="filter-container">
     <div class="filter-input">
       <!-- Filter Input -->
-      <input type="text" placeholder="Search by title">
+      <input type="text" [(ngModel)]="searchText"  placeholder="Search by title" (input)="filterProductions()">
 
       <!-- Filter Genre Selector -->
-      <select>
+      <select [(ngModel)]="selectedGenre" (change)="filterProductions()">
         <option value="all">All Genres</option>
-        <option value="rock">Trap</option>
-        <option value="pop">Drill</option>
-        <option value="jazz">Latin</option>
+        <option *ngFor="let genre of genres" [value]="genre">{{ genre | titlecase }}</option>
       </select>
     </div>
 
-
+    <!-- Upload Beat -->
     <button class="upload-btn" routerLink="../upload" *ngIf="isAdmin"><img src="assets/images/productions/upload-simple.svg" alt="Upload Icon" class="icon-upload">Upload Beat</button>
-
   </div>
 
 
@@ -37,14 +34,14 @@
     </div>
 
     <!--Beat - Loop Start-->
-    <div class="song-container" *ngFor="let production of productions">
+    <div class="song-container" *ngFor="let production of productions" >
       <div class="song-artwork" (click)="playSong(production)">
         <img [src]="production.coverImage" alt="Song Artwork" class="cover-artwork" *ngIf="production.coverImage">
         <img src="assets/images/logos/hvlogo.png" alt="Song Artwork" class="cover-artwork" *ngIf="!production.coverImage">
       </div>
       <div class="song-details">
         <div class="song-title" (click)="playSong(production)">{{ production.title | titlecase }}</div>
-        <div class="song-category" (click)="playSong(production)">{{ production.genre | titlecase}}</div>
+        <div class="song-category"><button (click)="playSong(production)">{{ production.genre | titlecase}}</button></div>
         <div class="song-length" (click)="playSong(production)">{{ formatDuration(production.duration) }}</div>
         <div class="song-bpm" (click)="playSong(production)">{{ production.bpm }} Bpm</div>
       </div>
@@ -56,9 +53,36 @@
     <!--Beat - Loop End-->
   </div>
 
-  <div class="music-player">
-    <audio #audioPlayer controls></audio>
+  <div class="audio-player-controls">
+    <input type="range" class="progress-bar" [value]="progressValue" (input)="seekTo($event)" id="progressBar" max="100">
+    <div class="buttons">
+      <div class="buttons-layout">
+        <button (click)="playPrevious()" class="control-button">
+          <img src="assets/images/icons/musicplayer/skip-back.svg" alt="Previous">
+        </button>
+        <button (click)="togglePlayPause()" class="control-button" id="playPauseButton">
+          <img *ngIf="!isPlaying" src="assets/images/icons/musicplayer/play.svg" alt="Play" id="playPauseIcon">
+          <img *ngIf="isPlaying" src="assets/images/icons/musicplayer/pause.svg" alt="Pause">
+        </button>
+
+        <button (click)="playNext()" class="control-button">
+          <img src="assets/images/icons/musicplayer/skip-forward.svg" alt="Next">
+        </button>
+        <div class="now-playing">
+          <img [src]="currentSong?.coverImage" alt="Song Artwork" class="cover-artwork" *ngIf="currentSong?.coverImage">
+          <div class="song-title">{{ currentSong?.title || 'Select a song' | titlecase}}</div>
+        </div>
+      </div>
+      <div>
+        <input type="range" class="volume-control" min="0" max="1" step="0.01" (input)="changeVolume($event)" value="1">
+      </div>
+    </div>
   </div>
+
+  <div class="audio-player">
+    <audio #audioPlayer></audio>
+  </div>
+
 
   <!-- License Section -->
   <div class="license-section">

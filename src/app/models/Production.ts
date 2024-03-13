@@ -1,6 +1,7 @@
 import {Genre} from "./Genre";
 
 export interface Production{
+  id: number;
   title: string;
   bpm: number;
   duration: number;

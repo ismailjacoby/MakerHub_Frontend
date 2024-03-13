@@ -1,12 +1,12 @@
 export enum Genre{
-  AFROBEATS = "Afrobeats",
-  AMAPIANO = "Amapiano",
-  DANCEHALL = "Dancehall",
-  DRILL = "Drill",
-  EDM = "Edm",
-  JERSEY = "Jersey",
-  LATIN = "Latin",
-  POP = "Pop",
-  SHATTA = "Shatta",
-  TRAP = "Trap"
+  AFROBEATS = "AFROBEATS",
+  AMAPIANO = "AMAPIANO",
+  DANCEHALL = "DANCEHALL",
+  DRILL = "DRILL",
+  EDM = "EDM",
+  JERSEY = "JERSEY",
+  LATIN = "LATIN",
+  POP = "POP",
+  SHATTA = "SHATTA",
+  TRAP = "TRAP"
 }
