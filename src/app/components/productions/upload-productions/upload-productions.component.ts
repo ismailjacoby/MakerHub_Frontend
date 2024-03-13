@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient, HttpEventType} from "@angular/common/http";
+import {HttpClient, HttpEvent, HttpEventType} from "@angular/common/http";
 import {Genre} from "../../../models/Genre";
 import {LicenseType} from "../../../models/LicenseType";
 import {ProductionService} from "../../../services/production.service";
@@ -69,33 +69,50 @@ export class UploadProductionsComponent {
   }
 
   onSubmit(): void {
+    console.log("Submitting...")
+
     if (!this.uploadForm.valid) {
       this.uploadMessage = "Please fill out the form correctly.";
       return;
     }
 
     const formData = new FormData();
-    Object.keys(this.uploadForm.controls).forEach(key => {
-      const value = this.uploadForm.get(key)?.value;
-      if (value instanceof File) {
-        formData.append(key, value, value.name);
-      } else {
-        formData.append(key, value);
-      }
-    });
+
+    formData.append('title', this.uploadForm.get('title')!.value);
+    formData.append('bpm', this.uploadForm.get('bpm')!.value);
+    formData.append('releaseDate', this.uploadForm.get('releaseDate')!.value);
+    formData.append('genre', this.uploadForm.get('genre')!.value.toUpperCase());
+    formData.append('coverImage', this.uploadForm.get('coverImage')!.value);
+    formData.append('audioMp3', this.uploadForm.get('audioMp3')!.value);
+    if (this.uploadForm.get('audioWav')!.value) {
+      formData.append('audioWav', this.uploadForm.get('audioWav')!.value);
+    }
+    if (this.uploadForm.get('audioZip')!.value) {
+      formData.append('audioZip', this.uploadForm.get('audioZip')!.value);
+    }
 
     this._productionService.uploadProduction(formData).subscribe(event => {
-      if (event.type === HttpEventType.UploadProgress && event.total) {
-        this.uploadProgress = Math.round(100 * event.loaded / event.total);
-      } else if (event.type === HttpEventType.Response) {
-        console.log('Successfully uploaded', event.body);
-        this.uploadMessage = "Successfully uploaded!";
-        this.uploadForm.reset();
-        this.uploadProgress = 0;
-      }
+      this.handleUploadEvent(event);
     }, error => {
       console.error('Upload failed', error);
       this.uploadMessage = "Upload failed. Please try again.";
     });
   }
+
+  private handleUploadEvent(event: HttpEvent<any>): void {
+    if (event.type === HttpEventType.UploadProgress && event.total) {
+      this.uploadProgress = Math.round(100 * event.loaded / event.total);
+    } else if (event.type === HttpEventType.Response) {
+      console.log('Successfully uploaded', event.body);
+      this.uploadMessage = "Successfully uploaded!";
+      this.uploadForm.reset();
+      this.uploadProgress = 0;
+      // Reset file names after successful upload
+      this.selectedMp3FileName = '';
+      this.selectedWavFileName = '';
+      this.selectedZipFileName = '';
+      this.selectedCoverImageName = '';
+    }
+  }
+
 }

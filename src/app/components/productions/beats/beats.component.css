@@ -256,6 +256,15 @@ h2{
   margin-right: 5px;
 }
 
+.song-artwork, .song-title, .song-category, .song-length, .song-bpm:hover{
+  cursor: pointer;
+}
+
+audio{
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
 
 /* Mobile */
 @media screen and (max-width: 600px) {

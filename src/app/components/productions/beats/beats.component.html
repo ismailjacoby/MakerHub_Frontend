@@ -37,15 +37,16 @@
     </div>
 
     <!--Beat - Loop Start-->
-    <div class="song-container">
-      <div class="song-artwork">
-        <img src="../../../assets/placeholder/blueCoverImage.webp" alt="Song Artwork" class="cover-artwork">
+    <div class="song-container" *ngFor="let production of productions">
+      <div class="song-artwork" (click)="playSong(production)">
+        <img [src]="production.coverImage" alt="Song Artwork" class="cover-artwork" *ngIf="production.coverImage">
+        <img src="assets/images/logos/hvlogo.png" alt="Song Artwork" class="cover-artwork" *ngIf="!production.coverImage">
       </div>
       <div class="song-details">
-        <div class="song-title">Song Title</div>
-        <div class="song-category">Genre</div>
-        <div class="song-length">03:12</div>
-        <div class="song-bpm">156 BPM</div>
+        <div class="song-title" (click)="playSong(production)">{{ production.title | titlecase }}</div>
+        <div class="song-category" (click)="playSong(production)">{{ production.genre | titlecase}}</div>
+        <div class="song-length" (click)="playSong(production)">{{ formatDuration(production.duration) }}</div>
+        <div class="song-bpm" (click)="playSong(production)">{{ production.bpm }} Bpm</div>
       </div>
       <div class="song-actions">
         <div class="wishlist-icon"><button class="music-player-buttons"><img src="assets/images/icons/navbar/heart.svg" alt="Add to Wishlist" class="music-player-icons"></button></div>
@@ -53,6 +54,10 @@
       </div>
     </div>
     <!--Beat - Loop End-->
+  </div>
+
+  <div class="music-player">
+    <audio #audioPlayer controls></audio>
   </div>
 
   <!-- License Section -->
