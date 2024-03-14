@@ -21,4 +21,8 @@ export class ProductionService {
   getAllProductions(): Observable<Production[]> {
     return this._http.get<Production[]>(`${this.baseUrl}/list`);
   }
+
+  deleteProductions(productionId: number): Observable<any>{
+    return this._http.delete<any>(`${this.baseUrl}/delete/${productionId}`);
+  }
 }

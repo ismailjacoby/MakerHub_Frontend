@@ -22,6 +22,7 @@ export class BeatsComponent implements OnInit, AfterViewInit{
   progressValue: number = 0;
   selectedGenre: string = 'all';
   searchText: string = '';
+  currentProductionIdToDelete: number | null = null;
 
 
 
@@ -121,5 +122,29 @@ export class BeatsComponent implements OnInit, AfterViewInit{
     return `${formattedMinutes}:${formattedSeconds}`;
   }
 
-  protected readonly Genre = Genre;
+  openDeleteModal(productionId: number): void {
+    if (typeof productionId === 'undefined' || productionId === null) {
+      console.error('Production ID is undefined or null');
+      return;
+    }
+    this.currentProductionIdToDelete = productionId;
+    document.getElementById('deleteModal')!.style.display = 'block';
+  }
+
+  closeModal(): void {
+    document.getElementById('deleteModal')!.style.display = 'none';
+  }
+
+  deleteProduction(): void {
+    if (this.currentProductionIdToDelete !== null) {
+      this._productionService.deleteProductions(this.currentProductionIdToDelete).subscribe({
+        next: () => {
+          this.fetchProductions();
+          this.closeModal();
+        },
+        error: (error) => console.error('Error deleting production', error)
+      });
+    }
+  }
+
 }

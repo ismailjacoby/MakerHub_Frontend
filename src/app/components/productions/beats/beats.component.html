@@ -46,8 +46,10 @@
         <div class="song-bpm" (click)="playSong(production)">{{ production.bpm }} Bpm</div>
       </div>
       <div class="song-actions">
-        <div class="wishlist-icon"><button class="music-player-buttons"><img src="assets/images/icons/navbar/heart.svg" alt="Add to Wishlist" class="music-player-icons"></button></div>
-        <div class="shopping-icon"><button class="music-player-buttons">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
+        <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
+        <div class="shopping-icon" *ngIf="!isAdmin"><button class="music-player-buttons">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
+        <div class="wishlist-icon" *ngIf="isAdmin"><button class="music-player-buttons"><img src="assets/images/icons/navbar/gear.svg" alt="Gear Icon" class="music-player-icons"></button></div>
+        <div class="shopping-icon" *ngIf="isAdmin"><button class="music-player-buttons" (click)="openDeleteModal(production.id)"><img src="assets/images/icons/musicplayer/trash.svg" alt="Delete Icon" class="music-player-icons"></button></div>
       </div>
     </div>
     <!--Beat - Loop End-->
@@ -156,5 +158,23 @@
       <button class="license-btn">READ LICENSE</button>
     </div>
 
+  </div>
+</div>
+
+
+<!-- Modal - Confirm Deletion -->
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <!-- Question -->
+    <p>Are you sure you want to delete this production?</p>
+
+    <!-- Buttons -->
+    <div class="buttons-container">
+      <!-- Yes -->
+      <button (click)="deleteProduction()" class="modal-btn">Yes</button>
+      <!-- No -->
+      <button (click)="closeModal()" class="modal-btn">No</button>
+    </div>
   </div>
 </div>
