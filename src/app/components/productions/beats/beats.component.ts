@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
-import {isAdminGuard} from "../../../utils/guards/isAdminGuard";
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Production} from "../../../models/Production";
 import {ProductionService} from "../../../services/production.service";

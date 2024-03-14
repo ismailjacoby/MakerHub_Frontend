@@ -7,7 +7,7 @@ import {isAdminGuard} from "../../utils/guards/isAdminGuard";
 const routes: Routes = [
   {path:'', redirectTo: 'beats', pathMatch: 'full'},
   {path:'beats', component:BeatsComponent},
-  {path:'upload', component:UploadProductionsComponent, canActivate: [isAdminGuard]}
+  {path:'upload', component:UploadProductionsComponent, canActivate: [isAdminGuard]},
 ];
 
 @NgModule({

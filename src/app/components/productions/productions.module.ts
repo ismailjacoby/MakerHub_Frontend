@@ -10,7 +10,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     UploadProductionsComponent,
-    BeatsComponent
+    BeatsComponent,
+
   ],
   imports: [
     CommonModule,

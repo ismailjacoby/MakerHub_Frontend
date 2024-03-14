@@ -35,26 +35,32 @@
 
     <!--Beat - Loop Start-->
     <div class="song-container" *ngFor="let production of productions" >
+      <!-- Artwork-->
       <div class="song-artwork" (click)="playSong(production)">
         <img [src]="production.coverImage" alt="Song Artwork" class="cover-artwork" *ngIf="production.coverImage">
         <img src="assets/images/logos/hvlogo.png" alt="Song Artwork" class="cover-artwork" *ngIf="!production.coverImage">
       </div>
+      <!-- Music Player Infos-->
       <div class="song-details">
         <div class="song-title" (click)="playSong(production)">{{ production.title | titlecase }}</div>
         <div class="song-category"><button (click)="playSong(production)">{{ production.genre | titlecase}}</button></div>
         <div class="song-length" (click)="playSong(production)">{{ formatDuration(production.duration) }}</div>
         <div class="song-bpm" (click)="playSong(production)">{{ production.bpm }} Bpm</div>
       </div>
+      <!-- Action Buttons -->
       <div class="song-actions">
+        <!-- Wishlist -->
         <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
+        <!-- Shopping Cart -->
         <div class="shopping-icon" *ngIf="!isAdmin"><button class="music-player-buttons">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
-        <div class="wishlist-icon" *ngIf="isAdmin"><button class="music-player-buttons"><img src="assets/images/icons/navbar/gear.svg" alt="Gear Icon" class="music-player-icons"></button></div>
+        <!-- Delete Production -->
         <div class="shopping-icon" *ngIf="isAdmin"><button class="music-player-buttons" (click)="openDeleteModal(production.id)"><img src="assets/images/icons/musicplayer/trash.svg" alt="Delete Icon" class="music-player-icons"></button></div>
       </div>
     </div>
     <!--Beat - Loop End-->
   </div>
 
+  <!-- Audio Player-->
   <div class="audio-player-controls">
     <input type="range" class="progress-bar" [value]="progressValue" (input)="seekTo($event)" id="progressBar" max="100">
     <div class="buttons">
