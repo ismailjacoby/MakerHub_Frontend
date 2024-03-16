@@ -12,6 +12,8 @@ export class NavbarComponent {
   isDropdownOpen: boolean = false;
   isClient: boolean = this._authService.isClient();
   isAdmin: boolean = this._authService.isAdmin();
+  wishlistCount: number = 0;
+  cartItemCount: number = 0;
 
 
   constructor(private readonly _authService: AuthService, private _router: Router) { }

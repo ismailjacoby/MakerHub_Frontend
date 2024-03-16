@@ -68,6 +68,14 @@
   vertical-align: middle;
 }
 
+/* Wishlist Shopping Cart quantity indicator*/
+.icon-badge {
+  position: absolute;
+  color: white;
+  font-size: 8px;
+}
+
+
 /* Hamburger Menu */
 .hamburger{
   display: none;

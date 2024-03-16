@@ -20,10 +20,16 @@
     <div class="nav-icons show">
 
       <!-- Wishlist Icon -->
-      <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="nav-icon"></a>
+      <a routerLink="#" class="icon-link">
+        <img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="nav-icon">
+        <span class="icon-badge" *ngIf="wishlistCount>0">{{wishlistCount}}</span>
+      </a>
 
       <!-- Shopping Icon -->
-      <a routerLink="#" class="icon-link"><img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon"></a>
+      <a routerLink="#" class="icon-link">
+        <img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon">
+        <span class="icon-badge" *ngIf="cartItemCount>0">{{cartItemCount}}</span>
+      </a>
 
       <!-- Account Icon & Dropdown -->
       <div class="dropdown" *ngIf="isLoggedIn()">
