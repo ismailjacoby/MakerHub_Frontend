@@ -113,11 +113,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #007bff;
+  background-color: #000;
 }
 
 progress::-moz-progress-bar {
-  background-color: #007bff;
+  background-color: #000;
 }
 
 .upload-container .drop-zone p {

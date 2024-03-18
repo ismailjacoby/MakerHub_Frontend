@@ -28,11 +28,13 @@ h2{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+
 }
 
 .cart-item{
   padding: 10px;
   overflow: hidden;
+  border-bottom: 1px solid #ccc;
 }
 
 .cart-header > div, .cart-item > div {

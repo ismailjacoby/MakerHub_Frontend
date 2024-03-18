@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SamplePack} from "../../../models/SamplePack";
 import {SamplePackService} from "../../../services/sample-pack.service";
+import {AuthService} from "../../../services/auth.service";
+
 
 @Component({
   selector: 'app-sample-packs-list',
@@ -9,8 +11,9 @@ import {SamplePackService} from "../../../services/sample-pack.service";
 })
 export class SamplePacksListComponent implements OnInit{
   samplePacks: SamplePack[]  = [];
+  isAdmin: boolean = this._authService.isAdmin();
 
-  constructor(private _samplePackService: SamplePackService) {
+  constructor(private _samplePackService: SamplePackService, private _authService: AuthService) {
   }
 
   ngOnInit() {

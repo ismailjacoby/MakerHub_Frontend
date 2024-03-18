@@ -3,7 +3,7 @@
 
   <!-- Title -->
   <h2>Sample Packs</h2>
-  <div class="sample-pack-upload">
+  <div class="sample-pack-upload" *ngIf="isAdmin">
     <button class="upload-btn" routerLink="../upload"><img src="assets/images/productions/upload-simple.svg" alt="Upload Icon" class="icon-upload">Upload Sample Pack</button>
   </div>
 
