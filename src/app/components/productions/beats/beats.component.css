@@ -18,6 +18,7 @@ h2{
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline-color: black;
 }
 
 .filter-container select {

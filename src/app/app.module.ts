@@ -19,6 +19,8 @@ import { PrivacyPolicyComponent } from './components/guidelines/privacy-policy/p
 import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AccountComponent } from './components/account/account.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -37,15 +39,17 @@ import { AccountComponent } from './components/account/account.component';
     PrivacyPolicyComponent,
     Error404Component,
     UnsubscribeComponent,
-    AccountComponent
+    AccountComponent,
+    ShoppingCartComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

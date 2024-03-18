@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {AboutComponent} from "./components/about/about.component";
 import {ServicesComponent} from "./components/services/services.component";
-import {ProductionsComponent} from "./components/productions/productions.component";
 import {SamplePacksComponent} from "./components/sample-packs/sample-packs.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {FaqComponent} from "./components/guidelines/faq/faq.component";
@@ -12,7 +11,10 @@ import {TermsOfUseComponent} from "./components/guidelines/terms-of-use/terms-of
 import {PrivacyPolicyComponent} from "./components/guidelines/privacy-policy/privacy-policy.component";
 import {Error404Component} from "./components/shared/error404/error404.component";
 import {UnsubscribeComponent} from "./components/unsubscribe/unsubscribe.component";
-import {ProductionsModule} from "./components/productions/productions.module";
+import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
+import {isClientGuard} from "./utils/guards/isClientGuard";
+import {isAdminGuard} from "./utils/guards/isAdminGuard";
+
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
   {path:'unsubscribe',component:UnsubscribeComponent},
+  {path: 'cart', component: ShoppingCartComponent},
   {path:'faq', component: FaqComponent},
   {path:'**', component: Error404Component}
 ];
