@@ -1,0 +1,28 @@
+import {Component, OnInit} from '@angular/core';
+import {SamplePack} from "../../../models/SamplePack";
+import {SamplePackService} from "../../../services/sample-pack.service";
+
+@Component({
+  selector: 'app-sample-packs-list',
+  templateUrl: './sample-packs-list.component.html',
+  styleUrl: './sample-packs-list.component.css'
+})
+export class SamplePacksListComponent implements OnInit{
+  samplePacks: SamplePack[]  = [];
+
+  constructor(private _samplePackService: SamplePackService) {
+  }
+
+  ngOnInit() {
+    this.getSamplePacks();
+  }
+
+  getSamplePacks() {
+    this._samplePackService.getSamplePacks().subscribe(
+      data => {
+        this.samplePacks = data;
+      },
+      error => console.error(error)
+    );
+  }
+}

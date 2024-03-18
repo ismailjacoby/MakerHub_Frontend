@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'about', component:AboutComponent},
   {path:'services', component:ServicesComponent},
   {path:'productions', loadChildren: ()=>import('./components/productions/productions.module').then(m => m.ProductionsModule)},
-  {path:'samplepacks', component:SamplePacksComponent},
+  {path:'samplepacks', loadChildren: ()=>import('./components/sample-packs/sample-pack.module').then(m => m.SamplePackModule)},
   {path:'contact', component:ContactComponent},
   {path:'account', loadChildren: ()=>import('./components/account/account.module').then(m => m.AccountModule)},
   {path:'licensing', component: LicensingInfoComponent},
