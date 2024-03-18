@@ -9,11 +9,6 @@ import {User} from "../models/User";
 })
 export class AccountService {
 
-  private clients: User[] = [
-    { username: 'johnDoe', firstName: 'John', lastName: 'Doe', email: 'john@example.com', active: true, blocked: true },
-    { username: 'janeDoe', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', active: false, blocked: false },
-  ];
-
   constructor(private _http: HttpClient) { }
 
   signUp(account: Account): Observable<any>{

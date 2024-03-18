@@ -100,7 +100,12 @@ h2{
   background-color: #EF3232;
   color: white;
   border: 1px solid #EF3232;
-
+}
+.item-remove{
+  cursor: pointer;
+}
+.item-remove:hover{
+  transform: scale(1.2);
 }
 
 @media (max-width: 720px) {

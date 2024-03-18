@@ -10,13 +10,21 @@
       <div class="product-header">Items</div>
     </div>
 
+    <div *ngIf="cartItems.length === 0">
+      <p>Your shopping cart is empty.</p>
+    </div>
+
     <!-- Loop Start -->
-    <div class="cart-item">
-      <img src="assets/images/favicon/hvfavicon.jpeg" alt="Product Image">
-      <div class="product-name">Title</div>
-      <div class="product-description">License</div>
-      <div class="price">1.000€</div>
-      <div class="delete">X</div>
+    <div class="cart-items" *ngIf="cartItems.length > 0">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.coverImage" alt="Product Image" class="item-image">
+        <div class="item-details">
+          <div class="item-title">{{ item.title }}</div>
+          <div class="item-type">{{ item.itemType }} {{ item.licenseType ? '(' + item.licenseType + ')' : '' }}</div>
+          <div class="item-price">€{{ item.price }}</div>
+        </div>
+        <div class="item-remove" (click)="removeItem(item.id)">X</div>
+      </div>
     </div>
     <!-- Loop End -->
   </div>

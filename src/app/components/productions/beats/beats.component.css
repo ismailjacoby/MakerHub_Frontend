@@ -463,12 +463,12 @@ h2{
 /* Mobile */
 @media screen and (max-width: 600px) {
   .license {
-    width: calc(50% - 20px); /* Make licenses half the width of the container with some margin */
+    width: calc(50% - 20px);
   }
 }
 
 @media screen and (max-width: 400px) {
   .license {
-    width: calc(100% - 20px); /* Make licenses full width of the container with some margin */
+    width: calc(100% - 20px);
   }
 }

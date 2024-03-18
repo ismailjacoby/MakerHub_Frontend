@@ -3,6 +3,8 @@ import {AuthService} from "../../../services/auth.service";
 import {Production} from "../../../models/Production";
 import {ProductionService} from "../../../services/production.service";
 import {Genre} from "../../../models/Genre";
+import {LicenseType} from "../../../models/LicenseType";
+import {ShoppingCartService} from "../../../services/shopping-cart.service";
 
 
 @Component({
@@ -22,12 +24,15 @@ export class BeatsComponent implements OnInit, AfterViewInit{
   selectedGenre: string = 'all';
   searchText: string = '';
   currentProductionIdToDelete: number | null = null;
-
+  showLicenseModal = false;
+  currentProductionId: number | null = null;
+  licenseTypes = ['BASIC', 'PREMIUM', 'TRACKOUT', 'UNLIMITED', 'EXCLUSIVE'];
 
 
 
   constructor(private _authService: AuthService,
-              private _productionService: ProductionService) {
+              private _productionService: ProductionService,
+              private _shoppingCartService: ShoppingCartService) {
   }
 
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
@@ -38,6 +43,19 @@ export class BeatsComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
+  }
+
+  addToCart(itemId: number, licenseType: LicenseType): void {
+    console.log("WORKING")
+    const username = this._authService.getUsername();
+    if (username) {
+      this._shoppingCartService.addItemToCart(username, itemId, true, licenseType).subscribe({
+        next: () => console.log('Item added to cart successfully'),
+        error: (error) => console.error('Failed to add item to cart', error)
+      });
+    } else {
+      console.error('User is not logged in');
+    }
   }
 
 
@@ -146,4 +164,50 @@ export class BeatsComponent implements OnInit, AfterViewInit{
     }
   }
 
+  openLicenseModal(productionId: number): void {
+    this.currentProductionId = productionId;
+    if (this.currentProductionId === null) {
+      console.error('No production selected');
+      return;
+    }
+    this.showLicenseModal = true;
+  }
+
+  getLicensePrice(licenseType: string): number {
+    switch (licenseType) {
+      case 'BASIC':
+        return 24.95;
+      case 'PREMIUM':
+        return 49.95;
+      case 'TRACKOUT':
+        return 99.95;
+      case 'UNLIMITED':
+        return 199.95;
+      case 'EXCLUSIVE':
+        return 1000.00;
+      default:
+        return 0;
+    }
+  }
+
+
+  getLicenseType(license: string): LicenseType {
+    // Map the string license to the corresponding LicenseType enum value
+    switch (license.toUpperCase()) {
+      case 'BASIC':
+        return LicenseType.BASIC;
+      case 'PREMIUM':
+        return LicenseType.PREMIUM;
+      case 'TRACKOUT':
+        return LicenseType.TRACKOUT;
+      case 'UNLIMITED':
+        return LicenseType.UNLIMITED;
+      case 'EXCLUSIVE':
+        return LicenseType.EXCLUSIVE;
+      default:
+        throw new Error('Invalid license type');
+    }
+  }
+
+  protected readonly LicenseType = LicenseType;
 }
