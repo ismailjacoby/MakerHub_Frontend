@@ -14,6 +14,7 @@ import {UnsubscribeComponent} from "./components/unsubscribe/unsubscribe.compone
 import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
 import {isClientGuard} from "./utils/guards/isClientGuard";
 import {isAdminGuard} from "./utils/guards/isAdminGuard";
+import {WishlistComponent} from "./components/wishlist/wishlist.component";
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'privacypolicy', component:PrivacyPolicyComponent},
   {path:'unsubscribe',component:UnsubscribeComponent},
   {path: 'cart', component: ShoppingCartComponent},
+  {path:'wishlist',  component: WishlistComponent},
   {path:'faq', component: FaqComponent},
   {path:'**', component: Error404Component}
 ];

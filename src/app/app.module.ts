@@ -21,6 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AccountComponent } from './components/account/account.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import {NgOptimizedImage} from "@angular/common";
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {NgOptimizedImage} from "@angular/common";
     Error404Component,
     UnsubscribeComponent,
     AccountComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    WishlistComponent
   ],
     imports: [
         BrowserModule,
