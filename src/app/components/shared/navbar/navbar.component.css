@@ -242,3 +242,21 @@
 .dropdown-content a:hover img{
   filter: invert(0);
 }
+
+/* Add styles for the cart dropdown */
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: none;
+  color: black;
+}
+
+/* Show the dropdown when hovered over the cart icon */
+.icon-link:hover .cart-dropdown {
+  display: block;
+}

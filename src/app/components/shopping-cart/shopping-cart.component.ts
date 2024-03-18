@@ -1,8 +1,8 @@
 import {Component, Injectable} from '@angular/core';
-import {HttpClient, HttpStatusCode} from "@angular/common/http";
 import {CartItems} from "../../models/CartItems";
 import {ShoppingCartService} from "../../services/shopping-cart.service";
 import {AuthService} from "../../services/auth.service";
+
 
 
 @Component({
@@ -13,6 +13,9 @@ import {AuthService} from "../../services/auth.service";
 
 export class ShoppingCartComponent {
   cartItems: CartItems[] = [];
+  total: number = 0;
+
+
 
   constructor(private _shoppingCartService: ShoppingCartService,
               private _authService: AuthService) {}
@@ -22,10 +25,13 @@ export class ShoppingCartComponent {
     this._shoppingCartService.getCartItems(username!).subscribe({
       next: (items) => {
         this.cartItems = items;
+        this.calculateTotal();
       },
       error: (error) => console.error(error),
     });
   }
+
+
 
   removeItem(cartItemId: number): void {
     const username = this._authService.getUsername();
@@ -46,12 +52,14 @@ export class ShoppingCartComponent {
       this._shoppingCartService.getCartItems(username!).subscribe({
         next: (items) => {
           this.cartItems = items;
-          console.log("Shopping updated")
+          this.calculateTotal();
         },
         error: (error) => console.error(error)
       });
   }
 
-
+  calculateTotal() {
+    this.total = this.cartItems.reduce((acc, item) => acc + item.price, 0);
+  }
 
 }

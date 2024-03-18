@@ -26,9 +26,13 @@
       </a>
 
       <!-- Shopping Icon -->
-      <a routerLink="/cart" class="icon-link">
+      <a routerLink="/cart" class="icon-link" (mouseover)="toggleCartDropdown()" (mouseleave)="closeCartDropdown()">
         <img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon">
         <span class="icon-badge" *ngIf="cartItemCount>0">{{cartItemCount}}</span>
+        <!-- Shopping Cart Dropdown -->
+        <div class="cart-dropdown" *ngIf="isCartDropdownOpen" (mouseover)="toggleCartDropdown()" (mouseleave)="closeCartDropdown()">
+          <app-shopping-cart></app-shopping-cart>
+        </div>
       </a>
 
       <!-- Account Icon & Dropdown -->

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Production} from "../../../models/Production";
 import {ProductionService} from "../../../services/production.service";

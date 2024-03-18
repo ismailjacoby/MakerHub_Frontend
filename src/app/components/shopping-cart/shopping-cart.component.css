@@ -55,6 +55,7 @@ h2{
 .cart-item img{
   height: 50px;
   width: auto;
+  border-radius: 5px;
 }
 
 .product-name {
