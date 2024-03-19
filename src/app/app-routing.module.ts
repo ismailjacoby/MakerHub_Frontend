@@ -15,6 +15,8 @@ import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.co
 import {isClientGuard} from "./utils/guards/isClientGuard";
 import {isAdminGuard} from "./utils/guards/isAdminGuard";
 import {WishlistComponent} from "./components/wishlist/wishlist.component";
+import {isLoggedOutGuard} from "./utils/guards/isLoggedOutGuard";
+import {isLoggedInGuard} from "./utils/guards/isLoggedInGuard";
 
 
 
@@ -31,8 +33,8 @@ const routes: Routes = [
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
   {path:'unsubscribe',component:UnsubscribeComponent},
-  {path: 'cart', component: ShoppingCartComponent},
-  {path:'wishlist',  component: WishlistComponent},
+  {path: 'cart', component: ShoppingCartComponent,canActivate: [isLoggedInGuard]},
+  {path:'wishlist',  component: WishlistComponent,canActivate: [isLoggedInGuard]},
   {path:'faq', component: FaqComponent},
   {path:'**', component: Error404Component}
 ];

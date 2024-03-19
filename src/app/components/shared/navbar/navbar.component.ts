@@ -34,6 +34,10 @@ export class NavbarComponent implements OnInit{
         error: (error) => console.error(error),
       });
     }
+    this._authService.connectedUser.subscribe(user => {
+      this.isClient = this._authService.isClient();
+      this.isAdmin = this._authService.isAdmin();
+    });
   }
 
   /*

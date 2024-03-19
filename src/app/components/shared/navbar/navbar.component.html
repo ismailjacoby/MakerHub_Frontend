@@ -20,13 +20,13 @@
     <div class="nav-icons show">
 
       <!-- Wishlist Icon -->
-      <a routerLink="/wishlist" class="icon-link">
+      <a routerLink="/wishlist" class="icon-link" *ngIf="isClient">
         <img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="nav-icon">
         <span class="icon-badge" *ngIf="wishlistCount>0">{{wishlistCount}}</span>
       </a>
 
       <!-- Shopping Icon -->
-      <a routerLink="/cart" class="icon-link" (mouseover)="toggleCartDropdown()" (mouseleave)="closeCartDropdown()">
+      <a routerLink="/cart" class="icon-link" (mouseover)="toggleCartDropdown()" (mouseleave)="closeCartDropdown()" *ngIf="isClient">
         <img src="assets/images/icons/navbar/shopping-cart-simple.svg" alt="Shopping Cart Icon" class="nav-icon">
         <span class="icon-badge" *ngIf="cartItemCount>0">{{cartItemCount}}</span>
         <!-- Shopping Cart Dropdown -->
