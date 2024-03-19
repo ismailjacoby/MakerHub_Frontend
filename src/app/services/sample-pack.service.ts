@@ -22,6 +22,9 @@ export class SamplePackService {
     return this._http.get<SamplePack[]>(`${this.baseUrl}/list`);
   }
 
+  getSamplePackById(id: number): Observable<SamplePack> {
+    return this._http.get<SamplePack>(`${this.baseUrl}/${id}`);
+  }
 
   deleteSamplePack(samplePackId: number): Observable<any> {
     return this._http.delete(`${this.baseUrl}/delete/${samplePackId}`);
