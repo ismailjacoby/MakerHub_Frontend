@@ -118,3 +118,21 @@ h2{
   justify-content: center;
   align-items: center;
 }
+.sample-pack-cover {
+  position: relative;
+  display: inline-block;
+  width: 225px;
+  height: auto;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: #EF3232;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 0 0 0 5px; /* Rounded corner on the bottom-left */
+}

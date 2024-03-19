@@ -14,6 +14,8 @@
       <!-- Image -->
       <div class="sample-pack-cover">
         <img src="{{samplepack.coverImageUrl}}" alt="Sample Pack Cover">
+        <!-- Delete Button (visible only to admins) -->
+        <button *ngIf="isAdmin" class="delete-button" (click)="deleteSamplePack(samplepack.id)">X</button>
       </div>
       <!-- Title -->
       <div class="sample-pack-title">

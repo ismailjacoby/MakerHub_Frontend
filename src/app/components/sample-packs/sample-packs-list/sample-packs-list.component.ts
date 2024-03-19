@@ -45,5 +45,24 @@ export class SamplePacksListComponent implements OnInit{
     }
   }
 
+  deleteSamplePack(samplePackId: number): void {
+    // Confirmation dialog to make sure the user wants to delete the sample pack
+    if (!confirm('Are you sure you want to delete this sample pack?')) {
+      return;
+    }
+
+    // Call the service method to delete the sample pack by its ID
+    this._samplePackService.deleteSamplePack(samplePackId).subscribe({
+      next: () => {
+        console.log('Sample pack deleted successfully');
+        // Refresh the list of sample packs
+        this.getSamplePacks();
+      },
+      error: (error) => {
+        console.error('Failed to delete sample pack', error);
+      }
+    });
+  }
+
   protected readonly LicenseType = LicenseType;
 }

@@ -7,6 +7,7 @@ import {LicenseType} from "../../../models/LicenseType";
 import {ShoppingCartService} from "../../../services/shopping-cart.service";
 
 
+
 @Component({
   selector: 'app-beats',
   templateUrl: './beats.component.html',
@@ -192,7 +193,6 @@ export class BeatsComponent implements OnInit, AfterViewInit{
 
 
   getLicenseType(license: string): LicenseType {
-    // Map the string license to the corresponding LicenseType enum value
     switch (license.toUpperCase()) {
       case 'BASIC':
         return LicenseType.BASIC;
