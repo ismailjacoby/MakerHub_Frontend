@@ -170,33 +170,6 @@ h2{
   margin-left: 5px;
 }
 
-@media (max-width: 1200px) {
-  .column-title h3{
-    display: none;
-  }
-  .song-details div {
-    min-width: 80px; /* Smaller screens might require smaller widths */
-  }
-
-  /* Adjust font sizes for smaller screens */
-  .song-details, .column-title h3 {
-    font-size: 9px;
-  }
-
-}
-@media (max-width: 690px) {
-  /* Hide less important details on smaller screens */
-  .song-length {
-    display: none;
-  }
-}
-
-@media (max-width: 585px) {
-  /* Hide less important details on smaller screens */
-  .song-length, .song-bpm {
-    display: none;
-  }
-}
 
 
 
@@ -470,5 +443,33 @@ h2{
 @media screen and (max-width: 400px) {
   .license {
     width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .column-title h3{
+    opacity: 0;
+  }
+  .song-details div {
+    min-width: 80px; /* Smaller screens might require smaller widths */
+  }
+
+  /* Adjust font sizes for smaller screens */
+  .song-details, .column-title h3 {
+    font-size: 9px;
+  }
+
+}
+@media (max-width: 690px) {
+  /* Hide less important details on smaller screens */
+  .song-length {
+    display: none;
+  }
+}
+
+@media (max-width: 585px) {
+  /* Hide less important details on smaller screens */
+  .song-length, .song-bpm {
+    display: none;
   }
 }
