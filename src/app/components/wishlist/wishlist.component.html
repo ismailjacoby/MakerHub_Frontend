@@ -1,3 +1,29 @@
-<div>
-  <h2>Wishlist</h2>
+<!-- Wishlist Container -->
+<div class="wishlist-container">
+
+  <!-- Title -->
+  <h2>My Wishlist</h2>
+
+  <!-- Wishlist Items List -->
+  <div class="wishlist-items">
+    <!-- Wishlist Item Loop Start -->
+    <div class="wishlist-item" *ngFor="let item of wishlistItems">
+      <!-- Image -->
+      <div class="wishlist-item-cover">
+        <img [src]="item.coverImage" alt="Wishlist Item Cover">
+      </div>
+      <!-- Title -->
+      <div class="wishlist-item-title">
+        <h3>{{item.title}}</h3>
+      </div>
+      <!-- Price and Add to Cart Button -->
+      <div class="wishlist-item-actions">
+        <!-- Price -->
+        <p class="price-text">{{item.price | currency: 'EUR'}}</p>
+        <!-- Add to Cart -->
+        <button class="wishlist-item-button" (click)="addToCart(item.id)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Wishlist Item Loop End -->
+  </div>
 </div>
