@@ -76,7 +76,7 @@ export class AuthService {
     return localStorage.getItem('role') === 'CLIENT'
   }
 
-  getUSerRole(): string{
+  getUserRole(): string{
     return this.userRole;
   }
 }
