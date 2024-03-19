@@ -13,7 +13,8 @@ export class ShoppingCartService {
   constructor(private _http: HttpClient) {}
 
   getCartItems(username: string): Observable<any> {
-    return this._http.get<any>(`${this.apiUrl}/cart/items/${username}`);
+    let params = new HttpParams().set('username', username);
+    return this._http.get<any>(`${this.apiUrl}/cart/items`, { params });
   }
 
   addItemToCart(username: string, itemId: number, isProduction: boolean, licenseType: LicenseType): Observable<any> {
