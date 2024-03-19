@@ -6,10 +6,10 @@
   <div class="filter-container">
     <div class="filter-input">
       <!-- Filter Input -->
-      <input type="text" [(ngModel)]="searchText"  placeholder="Search by title" (input)="filterProductions()">
+      <input type="text" [(ngModel)]="searchText"  placeholder="Search by title" (input)="searchTerms.next({ searchText: searchText, selectedGenre: selectedGenre })">
 
       <!-- Filter Genre Selector -->
-      <select [(ngModel)]="selectedGenre" (change)="filterProductions()">
+      <select [(ngModel)]="selectedGenre" (change)="searchTerms.next({ searchText: searchText, selectedGenre: selectedGenre })">
         <option value="all">All Genres</option>
         <option *ngFor="let genre of genres" [value]="genre">{{ genre | titlecase }}</option>
       </select>

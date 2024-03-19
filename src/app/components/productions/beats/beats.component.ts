@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -14,6 +13,7 @@ import {ProductionService} from "../../../services/production.service";
 import {Genre} from "../../../models/Genre";
 import {LicenseType} from "../../../models/LicenseType";
 import {ShoppingCartService} from "../../../services/shopping-cart.service";
+import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
 
 
 
@@ -23,7 +23,7 @@ import {ShoppingCartService} from "../../../services/shopping-cart.service";
   styleUrl: './beats.component.css',
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class BeatsComponent implements OnInit, AfterViewInit{
+export class BeatsComponent implements OnInit{
   isAdmin = this._authService.isAdmin();
   productions: Production[] = [];
   allProductions: Production[] = [];
@@ -38,6 +38,8 @@ export class BeatsComponent implements OnInit, AfterViewInit{
   showLicenseModal = false;
   currentProductionId: number | null = null;
   licenseTypes = ['BASIC', 'PREMIUM', 'TRACKOUT', 'UNLIMITED', 'EXCLUSIVE'];
+  searchTerms = new Subject<any>();
+
 
 
 
@@ -51,10 +53,17 @@ export class BeatsComponent implements OnInit, AfterViewInit{
   ngOnInit() {
     this.genres = Object.values(Genre);
     this.fetchProductions();
+
+    this.searchTerms.pipe(
+      debounceTime(300),
+      distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
+    ).subscribe(criteria => {
+      this.searchText = criteria.searchText;
+      this.selectedGenre = criteria.selectedGenre;
+      this.filterProductions();
+    });
   }
 
-  ngAfterViewInit(): void {
-  }
 
   addToCart(itemId: number, licenseType: LicenseType): void {
     console.log(licenseType.toString())

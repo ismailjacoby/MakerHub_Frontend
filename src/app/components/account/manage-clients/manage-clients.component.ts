@@ -25,7 +25,7 @@ export class ManageClientsComponent implements OnInit{
     });
 
     this.searchTerms.pipe(
-      debounceTime(500),
+      debounceTime(300),
       distinctUntilChanged()
     ).subscribe(term => {
       this.searchTerm = term;
