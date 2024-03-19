@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../../models/User";
 import {AccountService} from "../../../services/account.service";
+import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
 
 @Component({
   selector: 'app-manage-clients',
@@ -13,6 +14,7 @@ export class ManageClientsComponent implements OnInit{
   searchTerm: string = '';
   sortColumn: string | null = null;
   sortDirection: 'asc' | 'desc' = 'asc';
+  searchTerms= new Subject<string>();
 
   constructor(private _accountService: AccountService) {}
 
@@ -20,6 +22,14 @@ export class ManageClientsComponent implements OnInit{
     this._accountService.getAllClient().subscribe((data) => {
       this.clients = data;
       this.filteredClients = data;
+    });
+
+    this.searchTerms.pipe(
+      debounceTime(500),
+      distinctUntilChanged()
+    ).subscribe(term => {
+      this.searchTerm = term;
+      this.filterClients();
     });
   }
 

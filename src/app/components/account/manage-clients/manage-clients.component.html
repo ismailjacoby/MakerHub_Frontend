@@ -7,7 +7,7 @@
   <!-- Filter -->
   <div class="filter-container">
     <div class="filter-input">
-      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterClients()" placeholder="Search">
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchTerms.next($event)" placeholder="Search">
     </div>
   </div>
 
