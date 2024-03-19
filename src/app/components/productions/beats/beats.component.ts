@@ -1,4 +1,13 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Production} from "../../../models/Production";
 import {ProductionService} from "../../../services/production.service";
@@ -11,7 +20,8 @@ import {ShoppingCartService} from "../../../services/shopping-cart.service";
 @Component({
   selector: 'app-beats',
   templateUrl: './beats.component.html',
-  styleUrl: './beats.component.css'
+  styleUrl: './beats.component.css',
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class BeatsComponent implements OnInit, AfterViewInit{
   isAdmin = this._authService.isAdmin();
@@ -85,13 +95,24 @@ export class BeatsComponent implements OnInit, AfterViewInit{
     this.currentSong = production;
     this.currentSongIndex = this.productions.findIndex(p => p.id === production.id);
     player.src = production.audioMp3;
-    player.play().catch(error => console.error('Playback failed', error));
-    this.isPlaying = true;
+
+    const updateProgress = () => {
+      this.progressValue = (player.currentTime / player.duration) * 100;
+      if (this.progressValue < 100) {
+        requestAnimationFrame(updateProgress);
+      }
+    };
+
+    player.play().then(() => {
+      this.isPlaying = true;
+      requestAnimationFrame(updateProgress);
+    })
+      .catch(error => console.error('Playback failed', error));
   }
 
   playPrevious(): void {
     if (this.currentSongIndex <= 0) {
-      this.currentSongIndex = 1;
+      this.currentSongIndex = this.productions.length - 1;
     } else {
       this.currentSongIndex--;
     }
@@ -100,7 +121,7 @@ export class BeatsComponent implements OnInit, AfterViewInit{
 
   playNext(): void {
     if (this.currentSongIndex >= this.productions.length - 1) {
-      this.currentSongIndex = this.productions.length -1;
+      this.currentSongIndex = 0;
     } else {
       this.currentSongIndex++;
     }
