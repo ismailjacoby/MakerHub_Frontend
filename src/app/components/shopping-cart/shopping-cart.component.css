@@ -32,7 +32,6 @@ h2{
 .cart-item{
   padding: 10px;
   overflow: hidden;
-  border-bottom: 1px solid #ccc;
 }
 
 .cart-header > div, .cart-item > div {
