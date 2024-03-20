@@ -22,6 +22,7 @@ import { AccountComponent } from './components/account/account.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import {NgOptimizedImage} from "@angular/common";
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     UnsubscribeComponent,
     AccountComponent,
     ShoppingCartComponent,
-    WishlistComponent
+    WishlistComponent,
+    MyOrdersComponent
   ],
     imports: [
         BrowserModule,

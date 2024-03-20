@@ -2,6 +2,7 @@ import {Component, Injectable} from '@angular/core';
 import {CartItems} from "../../models/CartItems";
 import {ShoppingCartService} from "../../services/shopping-cart.service";
 import {AuthService} from "../../services/auth.service";
+import {CheckoutService} from "../../services/checkout.service";
 
 
 
@@ -18,7 +19,8 @@ export class ShoppingCartComponent {
 
 
   constructor(private _shoppingCartService: ShoppingCartService,
-              private _authService: AuthService) {}
+              private _authService: AuthService,
+              private _checkoutService: CheckoutService) {}
 
   ngOnInit() {
     const username = this._authService.getUsername();
@@ -61,5 +63,18 @@ export class ShoppingCartComponent {
   calculateTotal() {
     this.total = this.cartItems.reduce((acc, item) => acc + item.price, 0);
   }
+
+  processOrder(): void {
+    const username = this._authService.getUsername();
+    if (username) {
+      this._checkoutService.processCheckout(username).subscribe({
+        next: (orderDto) => {
+          console.log('Order processed successfully:', orderDto);
+        },
+        error: (error) => console.error('Error processing order:', error),
+      });
+    }
+  }
+
 
 }
