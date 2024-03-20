@@ -76,5 +76,22 @@ export class ShoppingCartComponent {
     }
   }
 
+  startCheckoutProcess(): void {
+    const username = this._authService.getUsername();
+    if (username) {
+      this._checkoutService.createCheckoutSession(username).subscribe({
+        next: ({ checkoutSessionUrl }) => {
+          // Redirect the user to Stripe's checkout page
+          window.location.href = checkoutSessionUrl;
+        },
+        error: (error) => {
+          console.error('Error creating checkout session:', error);
+        }
+      });
+    } else {
+      console.error('User is not logged in');
+    }
+  }
+
 
 }
