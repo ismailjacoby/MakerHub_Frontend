@@ -32,6 +32,6 @@
     <h2>Order Summary</h2>
     <div class="summary-line"><span>Total</span><span>{{ total | currency: 'EUR' }}</span></div>
     <button class="checkout-button" (click)="checkout()">Process Order</button>
-    <button class="continue-shopping">Continue Shopping</button>
+    <button class="continue-shopping" routerLink="../productions/beats">Continue Shopping</button>
   </div>
 </div>

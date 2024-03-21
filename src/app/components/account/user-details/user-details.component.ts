@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from "../../../services/account.service";
 import {User} from "../../../models/User";
 import {ActivatedRoute} from "@angular/router";
+import {OrderService} from "../../../services/order.service";
 
 @Component({
   selector: 'app-user-details',
@@ -10,8 +11,11 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UserDetailsComponent implements OnInit{
   client!: User;
+  orders: any[] = [];
 
-  constructor(private _accountService: AccountService, private _route: ActivatedRoute) {
+  constructor(private _accountService: AccountService,
+              private _route: ActivatedRoute,
+              private _orderService: OrderService) {
   }
 
   ngOnInit(): void {
@@ -22,9 +26,17 @@ export class UserDetailsComponent implements OnInit{
       });
     }
 
+    this.loadUserOrders(username!);
   }
 
-
+  loadUserOrders(username:string):void{
+    this._orderService.getOrdersByUsername(username).subscribe({
+      next: (orders) =>{
+        this.orders=orders;
+      },
+      error: (error) => console.error('Failed to load orders', error)
+    });
+  }
 
   changeActiveStatus(username: string){
     this._accountService.deactivateAccount(username).subscribe(()=>

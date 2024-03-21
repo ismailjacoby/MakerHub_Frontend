@@ -30,12 +30,25 @@
     </div>
 
     <!-- Purchased Items -->
-    <div class="purchased-items">
-      <ul>
-        <li>Item 1 - Date of Purchase: 03/03/2024 - License: Basic</li>
-        <li>Item 2 - Date of Purchase: 16/04/2024 - License: Premium</li>
-        <li>Item 3 - Date of Purchase: 24/05/2024 - License: Basic</li>
-      </ul>
+    <div class="order-table" *ngIf="orders.length > 0">
+      <table>
+        <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Purchase Date</th>
+          <th>Total Amount Paid</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.orderDate | date: 'mediumDate' }}</td>
+          <td>{{ order.totalAmount | currency }}</td>
+          <td>{{ order.paymentStatus }}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Buttons -->
