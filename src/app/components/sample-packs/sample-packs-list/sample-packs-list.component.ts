@@ -14,6 +14,7 @@ import {LicenseType} from "../../../models/LicenseType";
 export class SamplePacksListComponent implements OnInit{
   samplePacks: SamplePack[]  = [];
   isAdmin: boolean = this._authService.isAdmin();
+  isLoggedIn = this._authService.isLoggedIn();
 
   constructor(private _samplePackService: SamplePackService,
               private _authService: AuthService,

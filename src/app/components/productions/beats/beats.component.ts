@@ -25,6 +25,7 @@ import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
 })
 export class BeatsComponent implements OnInit{
   isAdmin = this._authService.isAdmin();
+  isLoggedIn = this._authService.isLoggedIn();
   productions: Production[] = [];
   allProductions: Production[] = [];
   genres: string[] = Object.values(Genre);

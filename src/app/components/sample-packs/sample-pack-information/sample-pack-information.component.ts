@@ -20,6 +20,7 @@ export class SamplePackInformationComponent implements OnInit{
   audioUrl!:string;
   coverUrl!:string;
   samplePack?: SamplePack;
+  isLoggedIn = this._authService.isLoggedIn();
 
   constructor(private _samplePackService: SamplePackService,
               private _route: ActivatedRoute,

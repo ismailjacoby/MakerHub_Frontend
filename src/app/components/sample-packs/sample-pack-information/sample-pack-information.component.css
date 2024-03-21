@@ -77,3 +77,8 @@ button:hover{
   cursor: pointer;
   transform: scale(1.05);
 }
+
+button:disabled{
+  opacity: 0.25;
+  cursor: not-allowed;
+}

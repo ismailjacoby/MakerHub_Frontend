@@ -473,3 +473,8 @@ h2{
     display: none;
   }
 }
+
+button:disabled{
+  opacity: 0.25;
+  cursor: not-allowed;
+}

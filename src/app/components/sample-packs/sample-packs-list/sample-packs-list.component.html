@@ -26,9 +26,9 @@
         <!-- Price -->
         <p class="price-text">{{samplepack.price | currency: 'EUR'}}</p>
         <!-- Wishlist -->
-        <button class="sample-pack-button"><img src="assets/images/icons/navbar/heart.svg" alt="Add to wishlist icon" class="button-icon"></button>
+        <button class="sample-pack-button" title="Login to add to wishlist" [disabled]="!isLoggedIn"><img src="assets/images/icons/navbar/heart.svg" alt="Add to wishlist icon" class="button-icon"></button>
         <!-- Add to cart -->
-        <button class="sample-pack-button" (click)="addToCart(samplepack.id)">Add to Cart</button>
+        <button class="sample-pack-button" (click)="addToCart(samplepack.id)" title="Login to add to cart" [disabled]="!isLoggedIn">Add to Cart</button>
       </div>
     </div>
     <!-- Sample Pack - Loop End-->

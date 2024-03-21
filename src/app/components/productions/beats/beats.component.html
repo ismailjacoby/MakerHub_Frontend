@@ -19,7 +19,6 @@
     <button class="upload-btn" routerLink="../upload" *ngIf="isAdmin"><img src="assets/images/productions/upload-simple.svg" alt="Upload Icon" class="icon-upload">Upload Beat</button>
   </div>
 
-
   <!-- Music Player -->
   <div class="music-player">
 
@@ -50,9 +49,9 @@
       <!-- Action Buttons -->
       <div class="song-actions">
         <!-- Wishlist -->
-        <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
+        <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons" title="Login to add to wishlist" [disabled]="!isLoggedIn"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
         <!-- Shopping Cart -->
-        <div class="shopping-icon" *ngIf="!isAdmin"><button class="music-player-buttons" (click)="addToCart(production.id,LicenseType.BASIC)">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
+        <div class="shopping-icon" *ngIf="!isAdmin"><button class="music-player-buttons" (click)="addToCart(production.id,LicenseType.BASIC)" title="Login to add to cart" [disabled]="!isLoggedIn">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
         <!-- Delete Production -->
         <div class="shopping-icon" *ngIf="isAdmin"><button class="music-player-buttons" (click)="openDeleteModal(production.id)"><img src="assets/images/icons/musicplayer/trash.svg" alt="Delete Icon" class="music-player-icons"></button></div>
       </div>
@@ -166,7 +165,6 @@
 
   </div>
 </div>
-
 
 <!-- Modal - Confirm Deletion -->
 <div id="deleteModal" class="modal">
