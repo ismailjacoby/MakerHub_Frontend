@@ -23,6 +23,12 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import {NgOptimizedImage} from "@angular/common";
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { CancelComponent } from './cancel/cancel.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SuccessComponent } from './success/success.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -44,7 +50,10 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
     AccountComponent,
     ShoppingCartComponent,
     WishlistComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    CancelComponent,
+    CheckoutComponent,
+    SuccessComponent
   ],
     imports: [
         BrowserModule,
@@ -52,9 +61,13 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        MatCardModule,
+        MatButtonModule
     ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

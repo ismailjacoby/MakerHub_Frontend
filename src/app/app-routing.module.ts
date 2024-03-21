@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {AboutComponent} from "./components/about/about.component";
 import {ServicesComponent} from "./components/services/services.component";
-import {SamplePacksComponent} from "./components/sample-packs/sample-packs.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {FaqComponent} from "./components/guidelines/faq/faq.component";
 import {LicensingInfoComponent} from "./components/guidelines/licensing-info/licensing-info.component";
@@ -13,11 +12,12 @@ import {Error404Component} from "./components/shared/error404/error404.component
 import {UnsubscribeComponent} from "./components/unsubscribe/unsubscribe.component";
 import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
 import {isClientGuard} from "./utils/guards/isClientGuard";
-import {isAdminGuard} from "./utils/guards/isAdminGuard";
 import {WishlistComponent} from "./components/wishlist/wishlist.component";
-import {isLoggedOutGuard} from "./utils/guards/isLoggedOutGuard";
 import {isLoggedInGuard} from "./utils/guards/isLoggedInGuard";
 import {MyOrdersComponent} from "./components/my-orders/my-orders.component";
+import {CancelComponent} from "./cancel/cancel.component";
+import {SuccessComponent} from "./success/success.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
 
 
 
@@ -34,6 +34,9 @@ const routes: Routes = [
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
   {path:'unsubscribe',component:UnsubscribeComponent},
+  {path: 'cancel', component: CancelComponent },
+  {path: 'success', component: SuccessComponent },
+  {path: 'checkout', component: CheckoutComponent },
   {path:'myorders', component: MyOrdersComponent, canActivate: [isClientGuard]},
   {path: 'cart', component: ShoppingCartComponent,canActivate: [isLoggedInGuard]},
   {path:'wishlist',  component: WishlistComponent,canActivate: [isLoggedInGuard]},

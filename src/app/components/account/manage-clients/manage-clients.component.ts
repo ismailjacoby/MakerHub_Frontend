@@ -57,7 +57,6 @@ export class ManageClientsComponent implements OnInit{
       let aValue = a[column];
       let bValue = b[column];
 
-      // If comparing strings, you might want to ensure they are compared in a case-insensitive manner
       if (typeof aValue === 'string' && typeof bValue === 'string') {
         aValue = aValue.toLowerCase();
         bValue = bValue.toLowerCase();
