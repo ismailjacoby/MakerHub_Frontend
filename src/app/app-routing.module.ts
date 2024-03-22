@@ -15,9 +15,7 @@ import {isClientGuard} from "./utils/guards/isClientGuard";
 import {WishlistComponent} from "./components/wishlist/wishlist.component";
 import {isLoggedInGuard} from "./utils/guards/isLoggedInGuard";
 import {MyOrdersComponent} from "./components/my-orders/my-orders.component";
-import {CancelComponent} from "./cancel/cancel.component";
-import {SuccessComponent} from "./success/success.component";
-import {CheckoutComponent} from "./checkout/checkout.component";
+
 
 
 
@@ -34,9 +32,6 @@ const routes: Routes = [
   {path:'termsofuse', component:TermsOfUseComponent},
   {path:'privacypolicy', component:PrivacyPolicyComponent},
   {path:'unsubscribe',component:UnsubscribeComponent},
-  {path: 'cancel', component: CancelComponent },
-  {path: 'success', component: SuccessComponent },
-  {path: 'checkout', component: CheckoutComponent },
   {path:'myorders', component: MyOrdersComponent, canActivate: [isClientGuard]},
   {path: 'cart', component: ShoppingCartComponent,canActivate: [isLoggedInGuard]},
   {path:'wishlist',  component: WishlistComponent,canActivate: [isLoggedInGuard]},

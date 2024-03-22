@@ -23,12 +23,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import {NgOptimizedImage} from "@angular/common";
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
-import { CancelComponent } from './cancel/cancel.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { SuccessComponent } from './success/success.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatCardModule} from "@angular/material/card";
-import {MatButtonModule} from "@angular/material/button";
+
 
 @NgModule({
   declarations: [
@@ -50,10 +46,7 @@ import {MatButtonModule} from "@angular/material/button";
     AccountComponent,
     ShoppingCartComponent,
     WishlistComponent,
-    MyOrdersComponent,
-    CancelComponent,
-    CheckoutComponent,
-    SuccessComponent
+    MyOrdersComponent
   ],
     imports: [
         BrowserModule,
@@ -61,9 +54,7 @@ import {MatButtonModule} from "@angular/material/button";
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule,
-        NgOptimizedImage,
-        MatCardModule,
-        MatButtonModule
+        NgOptimizedImage
     ],
   providers: [
     provideAnimationsAsync()
