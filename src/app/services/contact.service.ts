@@ -12,8 +12,7 @@ export class ContactService {
   constructor(private _http: HttpClient) { }
 
   sendContactForm(contactFormData: any): Observable<any>{
-    return this._http.post(`${this.baseUrl}/contact`, contactFormData, {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    });
+    return this._http.post(`${this.baseUrl}/contact`, contactFormData,
+      { responseType: 'text' });
   }
 }

@@ -91,7 +91,7 @@ a{
 }
 
 /* Success Message */
-.success-message {
+.successMessage {
   font-family: 'Sequel', sans-serif;
   color: #32ef3b;
   font-size: 12px;

@@ -55,5 +55,9 @@
     <!-- Button-->
     <input type="submit" value="SUBMIT" class="submit-btn"  [disabled]="!contactForm.valid">
   </form>
+  <div *ngIf="successMessage" class="successMessage">
+    <img src="assets/images/404/check-circle.png" alt="Error Icon" class="error-icon">
+    {{ successMessage }}
+  </div>
 </div>
 

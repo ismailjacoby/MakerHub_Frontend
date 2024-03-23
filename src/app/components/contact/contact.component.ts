@@ -9,6 +9,7 @@ import {ContactService} from "../../services/contact.service";
 })
 export class ContactComponent{
   contactForm!: FormGroup;
+  successMessage: string | null = null;
 
   constructor(private _formBuilder: FormBuilder, private _contactService: ContactService) {
     this.contactForm = this._formBuilder.group({
@@ -29,10 +30,11 @@ export class ContactComponent{
       this._contactService.sendContactForm(this.contactForm.value).subscribe(
         response => {
           console.log("Form submitted successfully", response);
+          this.successMessage = "Thank you for contacting us. We will get back to you soon.";
         },
         error => {
           console.error("Error submitting form", error);
-          // Handle form submission error (e.g., showing an error message)
+          this.successMessage = null;
         }
       )
     } else {
