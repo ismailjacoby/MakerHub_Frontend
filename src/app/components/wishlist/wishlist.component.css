@@ -70,3 +70,18 @@ h2{
 .wishlist-item-button:hover{
   background-color: #EF3232;
 }
+
+.wishlist-item-cover {
+  position: relative;
+}
+
+.remove-from-wishlist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: red;
+  border-radius: 0px 0px 0px 5px;
+  color: white;
+  cursor: pointer;
+}

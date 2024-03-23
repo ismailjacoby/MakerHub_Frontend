@@ -2,9 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  EventEmitter,
   OnInit,
-  Output,
   ViewChild
 } from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
@@ -14,6 +12,8 @@ import {Genre} from "../../../models/Genre";
 import {LicenseType} from "../../../models/LicenseType";
 import {ShoppingCartService} from "../../../services/shopping-cart.service";
 import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
+import {WishlistService} from "../../../services/wishlist.service";
+
 
 
 
@@ -46,7 +46,8 @@ export class BeatsComponent implements OnInit{
 
   constructor(private _authService: AuthService,
               private _productionService: ProductionService,
-              private _shoppingCartService: ShoppingCartService) {
+              private _shoppingCartService: ShoppingCartService,
+              private _wishlistService: WishlistService) {
   }
 
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
@@ -79,6 +80,17 @@ export class BeatsComponent implements OnInit{
     }
   }
 
+  addToWishlist(productionId: number): void {
+    const username = this._authService.getUsername();
+    if (username) {
+      this._wishlistService.addItemToWishlist(username, productionId, undefined).subscribe({
+        next: () => console.log(`Production ${productionId} added to wishlist successfully`),
+        error: (error) => console.error(`Failed to add production to wishlist`, error)
+      });
+    } else {
+      console.error('User is not logged in');
+    }
+  }
 
 
   fetchProductions() {

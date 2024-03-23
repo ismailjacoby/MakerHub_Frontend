@@ -49,7 +49,7 @@
       <!-- Action Buttons -->
       <div class="song-actions">
         <!-- Wishlist -->
-        <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons" title="Login to add to wishlist" [disabled]="!isLoggedIn"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
+        <div class="wishlist-icon" *ngIf="!isAdmin"><button class="music-player-buttons" (click)="addToWishlist(production.id)" title="Login to add to wishlist" [disabled]="!isLoggedIn"><img src="assets/images/icons/navbar/heart.svg" alt="Wishlist Icon" class="music-player-icons"></button></div>
         <!-- Shopping Cart -->
         <div class="shopping-icon" *ngIf="!isAdmin"><button class="music-player-buttons" (click)="addToCart(production.id,LicenseType.BASIC)" title="Login to add to cart" [disabled]="!isLoggedIn">Add to cart<img src="assets/images/icons/navbar/shopping-cart-simple.svg" class="music-player-icons" id="cart-btn-icon" alt="Purchase"></button></div>
         <!-- Delete Production -->

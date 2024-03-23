@@ -18,11 +18,13 @@ export class WishlistService {
   }
 
   addItemToWishlist(username: string, productionId?: number, samplePackId?: number): Observable<any> {
-    const params = new HttpParams()
-      .set('username', username)
-      .append('productionId', productionId ? productionId.toString() : '')
-      .append('samplePackId', samplePackId ? samplePackId.toString() : '');
-
+    let params = new HttpParams().set('username', username);
+    if (productionId !== undefined) {
+      params = params.set('productionId', productionId.toString());
+    }
+    if (samplePackId !== undefined) {
+      params = params.set('samplePackId', samplePackId.toString());
+    }
     return this._http.post(`${this.apiUrl}/add`, {}, { params });
   }
 

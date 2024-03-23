@@ -4,6 +4,7 @@ import {SamplePackService} from "../../../services/sample-pack.service";
 import {AuthService} from "../../../services/auth.service";
 import {ShoppingCartService} from "../../../services/shopping-cart.service";
 import {LicenseType} from "../../../models/LicenseType";
+import {WishlistService} from "../../../services/wishlist.service";
 
 
 @Component({
@@ -18,7 +19,8 @@ export class SamplePacksListComponent implements OnInit{
 
   constructor(private _samplePackService: SamplePackService,
               private _authService: AuthService,
-              private _shoppingCartService: ShoppingCartService) {
+              private _shoppingCartService: ShoppingCartService,
+              private _wishlistService: WishlistService) {
   }
 
   ngOnInit() {
@@ -63,6 +65,19 @@ export class SamplePacksListComponent implements OnInit{
         console.error('Failed to delete sample pack', error);
       }
     });
+  }
+
+  addToWishlist(samplePackId: number): void {
+    const username = this._authService.getUsername();
+    if (username) {
+      // Assuming addToWishlist can accept either a productionId or a samplePackId
+      this._wishlistService.addItemToWishlist(username, undefined, samplePackId).subscribe({
+        next: () => console.log(`Sample pack ${samplePackId} added to wishlist successfully`),
+        error: (error) => console.error(`Failed to add sample pack to wishlist`, error)
+      });
+    } else {
+      console.error('User is not logged in');
+    }
   }
 
   protected readonly LicenseType = LicenseType;
