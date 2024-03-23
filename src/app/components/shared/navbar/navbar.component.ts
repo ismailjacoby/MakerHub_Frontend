@@ -14,8 +14,6 @@ export class NavbarComponent implements OnInit{
   isDropdownOpen: boolean = false;
   isClient: boolean = this._authService.isClient();
   isAdmin: boolean = this._authService.isAdmin();
-  wishlistCount: number = 0;
-  cartItemCount: number = 0;
   isCartDropdownOpen: boolean = false;
 
 
@@ -29,7 +27,6 @@ export class NavbarComponent implements OnInit{
     if (username) {
       this._shoppingCartService.getCartItems(username).subscribe({
         next: (items) => {
-          this.cartItemCount = items.length;
         },
         error: (error) => console.error(error),
       });

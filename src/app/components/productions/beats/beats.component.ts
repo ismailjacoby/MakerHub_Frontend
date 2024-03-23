@@ -68,7 +68,6 @@ export class BeatsComponent implements OnInit{
 
 
   addToCart(itemId: number, licenseType: LicenseType): void {
-    console.log(licenseType.toString())
     const username = this._authService.getUsername();
     if (username) {
       this._shoppingCartService.addItemToCart(username, itemId, true, licenseType).subscribe({
