@@ -53,7 +53,7 @@ export class WishlistComponent {
     }
 
     const productionId = item.itemType === 'Production' ? item.id : undefined;
-    const samplePackId = item.itemType === 'Sample Pack' ? item.id : undefined;
+    const samplePackId = item.itemType === 'SamplePack' ? item.id : undefined;
 
     this._wishlistService.removeItemFromWishlist(username, productionId, samplePackId).subscribe({
       next: () => {
