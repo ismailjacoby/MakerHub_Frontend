@@ -4,12 +4,13 @@ import {Auth} from "../models/Auth";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UserRoles} from "../models/UserRoles";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = "http://localhost:8080/account/login"
+  private apiUrl = environment.apiUrl
   public userRole!: string;
 
   connectedUser = new BehaviorSubject<Auth | null>(null);
@@ -38,7 +39,7 @@ export class AuthService {
   login(username: string, password: string): Observable<any>{
     console.log('Sending login request to:', this.apiUrl);
     console.log('Request body:', { username, password });
-    return this._http.post<Auth>(this.apiUrl,{username, password}).pipe(
+    return this._http.post<Auth>(`${this.apiUrl}/account/login`,{username, password}).pipe(
       tap(value => {
         console.log('Login response received:', value);
         localStorage.setItem('token', value.token);

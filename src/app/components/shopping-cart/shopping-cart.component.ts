@@ -96,7 +96,7 @@ export class ShoppingCartComponent {
 
     try {
       const stripe = await this.stripePromise;
-      this._http.post(`${environment.serverUrl}/api/payment`, checkoutSessionRequest)
+      this._http.post(`${environment.apiUrl}/api/payment`, checkoutSessionRequest)
         .subscribe((data: any) => {
           if (data && data.id) {
             stripe!.redirectToCheckout({
