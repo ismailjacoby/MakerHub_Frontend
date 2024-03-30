@@ -1,4 +1,4 @@
-Incomplete (Deadline 29 March)
+Note: The last Commit is not the final version, due to secret keys and passwords being in the project
 
 Makerhub is the final project for the Technobel training program. 
 It represents the final milestone where participants develop their personal projects, which are then showcased in front of a jury. 
